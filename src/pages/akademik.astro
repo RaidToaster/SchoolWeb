@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import { Check, Lightbulb, Camera, Cpu } from 'lucide-astro';
+import { Check, Lightbulb, Camera, Cpu } from "lucide-astro";
 ---
 
 <PageLayout title="Akademik - SMKN 14 Jakarta">
@@ -63,6 +63,8 @@ import { Check, Lightbulb, Camera, Cpu } from 'lucide-astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         <div
           class="bg-white rounded-xl shadow-md p-6 text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <div
             class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -79,11 +81,13 @@ import { Check, Lightbulb, Camera, Cpu } from 'lucide-astro';
 
         <div
           class="bg-white rounded-xl shadow-md p-6 text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <div
             class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"
             data-aos="fade-up"
-            data-aos-delay="200"
+            data-aos-delay="100"
           >
             <Camera class="w-8 h-8 text-secondary-dark" />
           </div>
@@ -96,7 +100,7 @@ import { Check, Lightbulb, Camera, Cpu } from 'lucide-astro';
         <div
           class="bg-white rounded-xl shadow-md p-6 text-center"
           data-aos="fade-up"
-          data-aos-delay="300"
+          data-aos-delay="100"
         >
           <div
             class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -121,7 +125,7 @@ import { Check, Lightbulb, Camera, Cpu } from 'lucide-astro';
         </p>
         <a
           href="/penerimaan"
-          class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 duration-300 shadow-lg"
+          class="bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105 duration-300 shadow-lg"
         >
           Daftar Sekarang
         </a>

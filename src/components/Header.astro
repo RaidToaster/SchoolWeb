@@ -86,9 +86,9 @@ const links = [
 
 <header class="bg-gradient-to-r from-primary via-primary-dark to-primary shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
   <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between py-4">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between py-4 gap-4 lg:gap-0">
       <!-- Logo Section -->
-      <div class="flex items-center group">
+      <div class="flex items-center justify-center lg:justify-start group">
         <a href="/" class="flex items-center transform transition-all duration-300 hover:scale-105">
           <div class="relative">
             <div class="absolute inset-0 bg-white/20 rounded-full blur-xl group-hover:bg-white/30 transition-all duration-300"></div>
@@ -157,44 +157,19 @@ const links = [
           class="relative p-2 text-white hover:bg-white/10 rounded-lg cursor-pointer transition-all duration-300 block"
         >
           <!-- Menu Icon -->
-          <Menu class="h-6 w-6 transition-all duration-300" />
+          <Menu class="h-6 w-6 transition-all duration-300 peer-checked:opacity-0 peer-checked:rotate-90 peer-checked:scale-0" />
           <!-- Close Icon -->
-          <X class="h-6 w-6 absolute top-2 left-2 transition-all duration-300 opacity-0 -rotate-90 scale-0" />
+          <X class="h-6 w-6 absolute top-2 left-2 transition-all duration-300 opacity-0 rotate-90 scale-0 peer-checked:opacity-100 peer-checked:rotate-0 peer-checked:scale-100" />
         </label>
-      </div>
-    </div>
-  </div>
 
-  <!-- Mobile Menu -->
-  <div class="lg:hidden bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl max-h-0 overflow-hidden transition-all duration-500 ease-out peer-checked:max-h-screen">
-    <!-- Mobile Search -->
-    <div class="p-4 border-b border-gray-200 opacity-0 translate-y-4 transition-all duration-300 delay-100 peer-checked:opacity-100 peer-checked:translate-y-0">
-      <div class="relative">
-        <input
-          type="text"
-          placeholder="Cari informasi..."
-          class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
-        />
-        <svg
-          class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          ></path>
-        </svg>
-      </div>
-    </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl max-h-0 overflow-hidden transition-all duration-500 ease-out peer-checked:max-h-screen">
+
 
     <!-- Mobile Navigation -->
-    <nav class="px-4 py-6 space-y-2">
+    <nav class="p-6">
       {links.map((link, index) => (
-        <div class="opacity-0 translate-y-4 transition-all duration-300 peer-checked:opacity-100 peer-checked:translate-y-0" style={`transition-delay: ${(index + 2) * 50}ms`}>
+        <div class="opacity-100 transition-all duration-300 peer-checked:opacity-100 peer-checked:translate-y-0" style={`transition-delay: ${(index + 2) * 50}ms`}>
           <div class="group">
             <a
               href={link.href}
@@ -216,7 +191,7 @@ const links = [
             </a>
 
             <!-- Mobile Dropdown -->
-            {link.hasDropdown && link.dropdown && (
+            {/* {link.hasDropdown && link.dropdown && (
               <div class="ml-8 mt-2 space-y-1 max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-300">
                 {link.dropdown.map((dropdownItem, dropdownIndex) => (
                   <a
@@ -228,14 +203,14 @@ const links = [
                   </a>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         </div>
       ))}
     </nav>
 
     <!-- Mobile Contact Info -->
-    <div class="px-4 py-6 border-t border-gray-200 bg-gray-50/80 opacity-0 translate-y-4 transition-all duration-300 delay-500 peer-checked:opacity-100 peer-checked:translate-y-0">
+    <!-- <div class="px-4 py-6 border-t border-gray-200 bg-gray-50/80 opacity-0 translate-y-4 transition-all duration-300 delay-500 peer-checked:opacity-100 peer-checked:translate-y-0">
       <div class="space-y-3 text-sm text-gray-600">
         <div class="flex items-center transform hover:translate-x-1 transition-transform duration-200">
           <span class="mr-2">📧</span>
@@ -250,26 +225,12 @@ const links = [
           <span>Jakarta Selatan</span>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
+</div>
 </header>
 
 <style>
-  /* Mobile menu toggle functionality */
-  #mobile-menu-toggle:checked + label .h-6:first-child {
-    opacity: 0;
-    transform: rotate(90deg) scale(0);
-  }
-  
-  #mobile-menu-toggle:checked + label .h-6:last-child {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
-  
-  #mobile-menu-toggle:checked ~ div[class*="lg:hidden"]:not([class*="flex"]) {
-    max-height: 100vh !important;
-    overflow: visible !important;
-  }
   
   /* Fade in animation for mobile menu items */
   @keyframes fade-in-up {

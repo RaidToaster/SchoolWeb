@@ -1,90 +1,238 @@
 ---
-import { Facebook, Twitter, Instagram, Youtube } from 'lucide-astro';
+import {
+    Facebook,
+    Twitter,
+    Instagram,
+    Youtube,
+    MapPin,
+    Phone,
+    Mail,
+    Globe,
+    GraduationCap,
+} from "lucide-astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-footer-bg text-footer-text mt-auto">
-    <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-xl mb-4 font-semibold">SMK Negeri 14 Jakarta</h3>
-                <div class="text-footer-text space-y-2">
-                    <p>
-                        Jl. Percetakan Negara IIA No.2, RT.11/RW.6<br />
-                        Johar Baru, Kec. Johar Baru<br />
-                        Kota Jakarta Pusat, DKI Jakarta 10560
-                    </p>
-                    <p>
-                        <strong>Telp:</strong> (021) 1234-5678<br />
-                        <strong>Email:</strong> info@smkn14jkt.sch.id<br />
-                        <strong>Website:</strong> www.smkn14jkt.sch.id
-                    </p>
+<footer class="bg-footer-bg text-footer-text mt-auto relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div
+            class="absolute top-10 left-10 w-20 h-20 border-2 border-blue-400 rounded-full"
+        >
+        </div>
+        <div
+            class="absolute top-32 right-20 w-16 h-16 border-2 border-purple-400 rounded-lg rotate-45"
+        >
+        </div>
+        <div
+            class="absolute bottom-20 left-1/4 w-12 h-12 border-2 border-green-400 rounded-full"
+        >
+        </div>
+        <div
+            class="absolute bottom-32 right-1/3 w-14 h-14 border-2 border-yellow-400 rounded-lg rotate-12"
+        >
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 py-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Section - School Info (Left Aligned) -->
+            <div class="lg:col-span-5 text-left">
+                <div class="flex items-center mb-6">
+                    <GraduationCap class="h-10 w-10 text-white mr-3" />
+                    <div>
+                        <h3 class="text-2xl font-bold bg-white bg-clip-text">
+                            SMK Negeri 14 Jakarta
+                        </h3>
+                        <p class="text-sm text-white">
+                            Membangun Generasi Unggul
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 text-white">
+                    <div class="flex items-start space-x-3">
+                        <MapPin class="h-5 w-5 text-white mt-1 flex-shrink-0" />
+                        <div class="text-sm leading-relaxed">
+                            Jl. Percetakan Negara IIA No.2, RT.11/RW.6<br />
+                            Johar Baru, Kec. Johar Baru<br />
+                            Kota Jakarta Pusat, DKI Jakarta 10560
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="flex items-center space-x-3">
+                            <Phone class="h-4 w-4 text-primary" />
+                            <span class="text-sm">(021) 1234-5678</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <Mail class="h-4 w-4 text-white" />
+                            <span class="text-sm">info@smkn14jkt.sch.id</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3">
+                        <Globe class="h-4 w-4 text-primary" />
+                        <a
+                            href="#"
+                            class="text-sm hover:text-secondary transition-colors duration-300"
+                        >
+                            www.smkn14jkt.sch.id
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div>
-                <h3 class="text-xl mb-4 font-semibold">Tautan Cepat</h3>
-                <ul class="space-y-2">
+
+            <!-- Center Section - Quick Links -->
+            <div class="lg:col-span-3 text-left lg:text-center">
+                <h3 class="text-xl font-semibold mb-6 text-white">
+                    Tautan Cepat
+                </h3>
+                <ul class="space-y-3">
                     <li>
                         <a
                             href="/"
-                            class="hover:text-primary-hover transition-colors duration-300"
-                            >Beranda</a
+                            class="text-white hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                         >
+                            → Beranda
+                        </a>
                     </li>
                     <li>
                         <a
                             href="/tentang"
-                            class="hover:text-primary-hover transition-colors duration-300"
-                            >Tentang Kami</a
+                            class="text-white hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                         >
+                            → Tentang Kami
+                        </a>
                     </li>
                     <li>
                         <a
                             href="/penerimaan"
-                            class="hover:text-primary-hover transition-colors duration-300">Penerimaan</a
+                            class="text-white hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                         >
+                            → Penerimaan
+                        </a>
                     </li>
                     <li>
                         <a
                             href="/akademik"
-                            class="hover:text-primary-hover transition-colors duration-300">Akademik</a
+                            class="text-white hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                         >
+                            → Akademik
+                        </a>
                     </li>
                     <li>
                         <a
                             href="/berita"
-                            class="hover:text-primary-hover transition-colors duration-300">Berita & Acara</a
+                            class="text-white hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                         >
+                            → Berita & Acara
+                        </a>
                     </li>
                     <li>
-                        <a href="/kontak" class="hover:text-primary-hover transition-colors duration-300"
-                            >Kontak</a
+                        <a
+                            href="/kontak"
+                            class="text-white hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
                         >
+                            → Kontak
+                        </a>
                     </li>
                 </ul>
             </div>
-            <div>
-                <h3 class="text-xl mb-4 font-semibold">Ikuti Kami</h3>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-primary-hover transition-colors duration-300">
-                        <Facebook class="h-6 w-6" />
+
+            <!-- Right Section - Social Media (Right Aligned) -->
+            <div class="lg:col-span-4 text-left lg:text-right">
+                <h3 class="text-xl font-semibold mb-6 text-primary">
+                    Terhubung Dengan Kami
+                </h3>
+
+                <!-- Social Media Links -->
+                <div class="flex justify-start lg:justify-end space-x-4 mb-6">
+                    <a href="#" class="group relative">
+                        <div
+                            class="bg-blue-600 p-3 rounded-full group-hover:bg-blue-500 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+                        >
+                            <Facebook class="h-5 w-5" />
+                        </div>
                     </a>
-                    <a href="#" class="hover:text-primary-hover transition-colors duration-300">
-                        <Twitter class="h-6 w-6" />
+                    <a href="#" class="group relative">
+                        <div
+                            class="bg-sky-500 p-3 rounded-full group-hover:bg-sky-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+                        >
+                            <Twitter class="h-5 w-5" />
+                        </div>
                     </a>
-                    <a href="#" class="hover:text-primary-hover transition-colors duration-300">
-                        <Instagram class="h-6 w-6" />
+                    <a href="#" class="group relative">
+                        <div
+                            class="bg-amber-500 p-3 rounded-full group-hover:bg-amber-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+                        >
+                            <Instagram class="h-5 w-5" />
+                        </div>
                     </a>
-                    <a href="#" class="hover:text-primary-hover transition-colors duration-300">
-                        <Youtube class="h-6 w-6" />
+                    <a href="#" class="group relative">
+                        <div
+                            class="bg-red-600 p-3 rounded-full group-hover:bg-red-500 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
+                        >
+                            <Youtube class="h-5 w-5" />
+                        </div>
                     </a>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div
+                    class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+                >
+                    <h4 class="text-sm font-semibold mb-2 text-gray-200">
+                        Berlangganan Newsletter
+                    </h4>
+                    <p class="text-xs text-white mb-3">
+                        Dapatkan update terbaru dari sekolah
+                    </p>
+                    <div class="flex">
+                        <input
+                            type="email"
+                            placeholder="Email Anda"
+                            class="flex-1 px-3 py-2 text-sm bg-white/20 border border-white/30 rounded-l-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                        />
+                        <button
+                            class="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-r-md transition-colors duration-300 text-sm font-medium"
+                        >
+                            Kirim
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div
-            class="mt-8 border-t border-gray-700 pt-4 text-center"
-        >
-            &copy; {currentYear} SMK Negeri 14 Jakarta. All rights reserved.
+
+        <!-- Bottom Border -->
+        <div class="mt-12 pt-8 border-t border-white/20">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+            >
+                <div class="text-sm text-white">
+                    &copy; {currentYear} SMK Negeri 14 Jakarta. Seluruh hak cipta
+                    dilindungi.
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-white">
+                    <a
+                        href="#"
+                        class="hover:text-white transition-colors duration-300"
+                        >Kebijakan Privasi</a
+                    >
+                    <span>•</span>
+                    <a
+                        href="#"
+                        class="hover:text-white transition-colors duration-300"
+                        >Syarat & Ketentuan</a
+                    >
+                    <span>•</span>
+                    <div class="flex items-center space-x-1">
+                        <span>Dibuat dengan</span>
+                        <span class="text-red-400">♥</span>
+                        <span>untuk pendidikan</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
