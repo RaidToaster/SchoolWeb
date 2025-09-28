@@ -1,128 +1,333 @@
 ---
+import { Image } from "astro:assets";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  GraduationCap,
+  Users,
+  Calendar,
+  BookOpen,
+  Home,
+  Medal,
+  Book,
+  Images,
+  Phone,
+} from "lucide-astro";
+import logo from "@assets/logo/LogoSMKN14.png";
+
 const links = [
-  { name: 'Beranda', href: '/' },
-  { name: 'Tentang Kami', href: '/tentang' },
-  { name: 'Penerimaan', href: '/penerimaan' },
-  { name: 'Akademik', href: '/akademik' },
-  { name: 'Berita & Acara', href: '/berita' },
-  { name: 'Staf & Guru', href: '/staf' },
-  { name: 'Kehidupan Siswa', href: '/kegiatan-siswa' },
-  { name: 'Galeri', href: '/galeri' },
-  { name: 'Kontak', href: '/kontak' },
+  {
+    name: "Beranda",
+    href: "/",
+    icon: Home,
+    hasDropdown: false,
+  },
+  {
+    name: "Tentang Kami",
+    href: "/tentang",
+    icon: Users,
+    hasDropdown: false,
+    dropdown: [
+      { name: "Sejarah Sekolah", href: "/tentang/sejarah" },
+      { name: "Visi & Misi", href: "/tentang/visi-misi" },
+      { name: "Struktur Organisasi", href: "/tentang/struktur" },
+    ],
+  },
+  {
+    name: "Penerimaan",
+    href: "/penerimaan",
+    icon: GraduationCap,
+    hasDropdown: false,
+  },
+  {
+    name: "Akademik",
+    href: "/akademik",
+    icon: BookOpen,
+    hasDropdown: false,
+    dropdown: [
+      { name: "Program Keahlian", href: "/akademik/program" },
+      { name: "Kurikulum", href: "/akademik/kurikulum" },
+      { name: "Jadwal Pelajaran", href: "/akademik/jadwal" },
+    ],
+  },
+  {
+    name: "Berita & Acara",
+    href: "/berita",
+    icon: Calendar,
+    hasDropdown: false,
+  },
+  {
+    name: "Staf & Guru",
+    href: "/staf",
+    icon: Medal,
+    hasDropdown: false,
+  },
+  {
+    name: "Kehidupan Siswa",
+    href: "/kegiatan-siswa",
+    icon: Book,
+    hasDropdown: false,
+  },
+  {
+    name: "Galeri",
+    href: "/galeri",
+    icon: Images,
+    hasDropdown: false,
+  },
+  {
+    name: "Kontak",
+    href: "/kontak",
+    icon: Phone,
+    hasDropdown: false,
+  },
 ];
 ---
 
-<header class="bg-background dark:bg-dark-bg shadow-md sticky top-0 z-50 transition-colors duration-300">
+<header class="bg-gradient-to-r from-primary via-primary-dark to-primary shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between py-4">
-      <div class="flex items-center">
-        <a href="/" class="flex items-center">
-          <img
-            src="/src/assets/logo/LogoSMKN14.png"
-            alt="Logo SMKN 14 Jakarta"
-            class="h-12 w-auto mr-3"
-          />
-          <span class="text-2xl font-bold text-gray-800 dark:text-dark-text">
-            SMKN 14 Jakarta
-          </span>
+      <!-- Logo Section -->
+      <div class="flex items-center group">
+        <a href="/" class="flex items-center transform transition-all duration-300 hover:scale-105">
+          <div class="relative">
+            <div class="absolute inset-0 bg-white/20 rounded-full blur-xl group-hover:bg-white/30 transition-all duration-300"></div>
+            <Image
+              src={logo}
+              alt="Logo SMKN 14 Jakarta"
+              width={56}
+              height={56}
+              format="webp"
+              quality={90}
+              class="h-14 w-auto relative z-10 drop-shadow-lg"
+            />
+          </div>
+          <div class="ml-4">
+            <span class="text-2xl font-bold text-white tracking-tight">SMKN 14</span>
+            <div class="text-sm text-blue-100 font-medium tracking-wide">Jakarta</div>
+          </div>
         </a>
       </div>
-      <nav class="hidden md:flex items-center space-x-6">
-        {links.map(link => (
-          <a
-            href={link.href}
-            class:list={[
-              "text-gray-700 dark:text-dark-text hover:text-primary-hover dark:hover:text-primary-hover transition-all duration-300 font-medium hover:scale-105",
-              { "font-bold text-primary dark:text-primary": Astro.url.pathname === link.href }
-            ]}
-          >
-            {link.name}
-          </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-1">
+        {links.map((link) => (
+          <div class="relative group">
+            <a
+              href={link.href}
+              class:list={[
+                "flex items-center px-4 py-2 rounded-lg text-white font-medium transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-sm hover:shadow-lg hover:-translate-y-0.5",
+                {
+                  "bg-white/20 backdrop-blur-sm shadow-lg border border-white/20":
+                    Astro.url.pathname === link.href,
+                },
+              ]}
+            >
+              {link.icon && <link.icon class="w-4 h-4 mr-2 opacity-80" />}
+              <span class="whitespace-nowrap">{link.name}</span>
+              {link.hasDropdown && (
+                <ChevronDown class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-300" />
+              )}
+            </a>
+
+            <!-- Desktop Dropdown Menu -->
+            {link.hasDropdown && link.dropdown && (
+              <div class="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                <div class="py-3">
+                  {link.dropdown.map((dropdownItem) => (
+                    <a
+                      href={dropdownItem.href}
+                      class="block px-6 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 border-l-4 border-transparent hover:border-primary"
+                    >
+                      {dropdownItem.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </nav>
-      <div class="flex items-center space-x-4">
-        <!-- Dark Mode Toggle -->
-        <button id="theme-toggle" class="text-gray-600 dark:text-dark-text hover:text-gray-800 dark:hover:text-white focus:outline-none">
-          <svg id="theme-icon-light" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-          </svg>
-          <svg id="theme-icon-dark" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-          </svg>
-        </button>
-        <div class="md:hidden">
-          <button id="menu-btn" class="text-gray-600 dark:text-dark-text hover:text-gray-800 dark:hover:text-white focus:outline-none">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="lg:hidden">
+        <input type="checkbox" id="mobile-menu-toggle" class="peer hidden" />
+        <label
+          for="mobile-menu-toggle"
+          class="relative p-2 text-white hover:bg-white/10 rounded-lg cursor-pointer transition-all duration-300 block"
+        >
+          <!-- Menu Icon -->
+          <Menu class="h-6 w-6 transition-all duration-300" />
+          <!-- Close Icon -->
+          <X class="h-6 w-6 absolute top-2 left-2 transition-all duration-300 opacity-0 -rotate-90 scale-0" />
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="lg:hidden bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl max-h-0 overflow-hidden transition-all duration-500 ease-out peer-checked:max-h-screen">
+    <!-- Mobile Search -->
+    <div class="p-4 border-b border-gray-200 opacity-0 translate-y-4 transition-all duration-300 delay-100 peer-checked:opacity-100 peer-checked:translate-y-0">
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Cari informasi..."
+          class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+        />
+        <svg
+          class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="px-4 py-6 space-y-2">
+      {links.map((link, index) => (
+        <div class="opacity-0 translate-y-4 transition-all duration-300 peer-checked:opacity-100 peer-checked:translate-y-0" style={`transition-delay: ${(index + 2) * 50}ms`}>
+          <div class="group">
+            <a
+              href={link.href}
+              class:list={[
+                "flex items-center px-4 py-3 rounded-xl text-gray-700 font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2 group",
+                {
+                  "bg-primary/20 text-primary shadow-sm border-l-4 border-primary":
+                    Astro.url.pathname === link.href,
+                },
+              ]}
+            >
+              {link.icon && (
+                <link.icon class="w-5 h-5 mr-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+              )}
+              <span class="flex-1">{link.name}</span>
+              {link.hasDropdown && (
+                <ChevronDown class="w-4 h-4 opacity-50 transform group-hover:rotate-180 transition-transform duration-300" />
+              )}
+            </a>
+
+            <!-- Mobile Dropdown -->
+            {link.hasDropdown && link.dropdown && (
+              <div class="ml-8 mt-2 space-y-1 max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-300">
+                {link.dropdown.map((dropdownItem, dropdownIndex) => (
+                  <a
+                    href={dropdownItem.href}
+                    class="block px-4 py-2 text-sm text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0"
+                    style={`transition-delay: ${dropdownIndex * 50}ms`}
+                  >
+                    {dropdownItem.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </nav>
+
+    <!-- Mobile Contact Info -->
+    <div class="px-4 py-6 border-t border-gray-200 bg-gray-50/80 opacity-0 translate-y-4 transition-all duration-300 delay-500 peer-checked:opacity-100 peer-checked:translate-y-0">
+      <div class="space-y-3 text-sm text-gray-600">
+        <div class="flex items-center transform hover:translate-x-1 transition-transform duration-200">
+          <span class="mr-2">📧</span>
+          <span>info@smkn14jakarta.sch.id</span>
+        </div>
+        <div class="flex items-center transform hover:translate-x-1 transition-transform duration-200">
+          <span class="mr-2">📞</span>
+          <span>(021) 123-4567</span>
+        </div>
+        <div class="flex items-center transform hover:translate-x-1 transition-transform duration-200">
+          <span class="mr-2">📍</span>
+          <span>Jakarta Selatan</span>
         </div>
       </div>
     </div>
   </div>
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-background dark:bg-dark-bg border-t border-gray-200 dark:border-gray-700">
-    <nav class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
-      {links.map(link => (
-        <a
-          href={link.href}
-          class:list={[
-            "block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-dark-text hover:text-white hover:bg-primary-hover dark:hover:bg-primary-hover transition-all duration-300 hover:scale-105",
-            { "bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary": Astro.url.pathname === link.href }
-          ]}
-        >
-          {link.name}
-        </a>
-      ))}
-    </nav>
-  </div>
 </header>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
+<style>
+  /* Mobile menu toggle functionality */
+  #mobile-menu-toggle:checked + label .h-6:first-child {
+    opacity: 0;
+    transform: rotate(90deg) scale(0);
+  }
+  
+  #mobile-menu-toggle:checked + label .h-6:last-child {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  
+  #mobile-menu-toggle:checked ~ div[class*="lg:hidden"]:not([class*="flex"]) {
+    max-height: 100vh !important;
+    overflow: visible !important;
+  }
+  
+  /* Fade in animation for mobile menu items */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-
-    // Dark mode toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIconLight = document.getElementById('theme-icon-light');
-    const themeIconDark = document.getElementById('theme-icon-dark');
-    const html = document.documentElement;
-
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-
-    if (currentTheme === 'dark') {
-      html.classList.add('dark');
-      if (themeIconLight) themeIconLight.classList.remove('hidden');
-      if (themeIconDark) themeIconDark.classList.add('hidden');
-    } else {
-      html.classList.remove('dark');
-      if (themeIconLight) themeIconLight.classList.add('hidden');
-      if (themeIconDark) themeIconDark.classList.remove('hidden');
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.3s ease-out forwards;
+    opacity: 0;
+  }
 
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        if (html.classList.contains('dark')) {
-          html.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-          if (themeIconLight) themeIconLight.classList.add('hidden');
-          if (themeIconDark) themeIconDark.classList.remove('hidden');
-        } else {
-          html.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-          if (themeIconLight) themeIconLight.classList.remove('hidden');
-          if (themeIconDark) themeIconDark.classList.add('hidden');
-        }
-      });
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(99, 102, 241, 0.3);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+  }
+
+  /* Enhanced hover effects for better UX */
+  @media (hover: hover) {
+    .group:hover .group-hover\:max-h-96 {
+      max-height: 24rem;
     }
-  });
-</script>
+  }
+
+  /* Add subtle animation to icons */
+  .group:hover svg {
+    transform: scale(1.1);
+  }
+
+  /* Better focus states for accessibility */
+  input[type="checkbox"]:focus + label,
+  input[type="text"]:focus,
+  a:focus {
+    outline: 2px solid rgba(99, 102, 241, 0.5);
+    outline-offset: 2px;
+  }
+</style>

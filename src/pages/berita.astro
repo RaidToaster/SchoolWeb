@@ -54,24 +54,24 @@ const posts = [
 ---
 
 <PageLayout title="Berita & Acara - SMKN 14 Jakarta">
-  <section class="py-12 bg-neutral dark:bg-gray-900">
+  <section class="py-12 bg-neutral">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4" data-aos="fade-down">Berita & Acara</h1>
-        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Ikuti perkembangan terbaru dari kegiatan dan prestasi di sekolah kami.</p>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4" data-aos="fade-down">Berita & Acara</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Ikuti perkembangan terbaru dari kegiatan dan prestasi di sekolah kami.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post, index) => (
-          <a href={post.href} class="group block bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay={index * 100}>
+          <a href={post.href} class="group block bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay={index * 100}>
             <div class="relative overflow-hidden">
               <img src={post.image} alt={`Gambar untuk ${post.title}`} class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async">
               <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div class="p-6">
-              <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">{post.title}</h2>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 font-medium">{post.date} • {post.author}</p>
-              <p class="text-gray-600 dark:text-gray-300 line-clamp-3">{post.excerpt}</p>
+              <h2 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">{post.title}</h2>
+              <p class="text-sm text-gray-500 mb-4 font-medium">{post.date} • {post.author}</p>
+              <p class="text-gray-600 line-clamp-3">{post.excerpt}</p>
             </div>
           </a>
         ))}

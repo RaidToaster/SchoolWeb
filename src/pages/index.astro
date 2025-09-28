@@ -1,35 +1,102 @@
 ---
+import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
+import heroImage from "@assets/hero/GedungSMKN14.jpg";
+import { Network, Code, Palette } from "lucide-astro";
 
-// Mengambil 3 berita terbaru untuk ditampilkan di beranda
-const latestPosts = [
+const featuredPrograms = [
   {
-    title:
-      "Siswa SMKN 14 Jakarta Raih Juara 1 Lomba Kompetensi Siswa Tingkat Nasional",
-    date: "25 September 2025",
-    author: "Humas Sekolah",
-    image:
-      "https://via.placeholder.com/400x250/007BFF/FFFFFF?text=LKS+Nasional",
-    excerpt: "Prestasi membanggakan kembali diukir oleh siswa kami...",
-    href: "/berita/lks-nasional-2025",
+    title: "Teknik Komputer & Jaringan",
+    description:
+      "Mempelajari perakitan, instalasi, dan pemeliharaan jaringan komputer.",
+    icon: "Network",
   },
   {
-    title: "Workshop Internet of Things (IoT) untuk Kelas XI",
-    date: "22 September 2025",
-    author: "Jurusan TKJ",
-    image:
-      "https://via.placeholder.com/400x250/6C757D/FFFFFF?text=Workshop+IoT",
-    excerpt: "Jurusan Teknik Komputer dan Jaringan mengadakan workshop...",
-    href: "/berita/workshop-iot",
+    title: "Rekayasa Perangkat Lunak",
+    description:
+      "Mengembangkan aplikasi web, mobile, dan desktop dengan teknologi terkini.",
+    icon: "Code",
   },
   {
-    title: "Peringatan Hari Kemerdekaan RI ke-80 di SMKN 14 Jakarta",
-    date: "17 Agustus 2025",
-    author: "OSIS",
-    image: "https://via.placeholder.com/400x250/28A745/FFFFFF?text=HUT+RI+80",
-    excerpt:
-      "Seluruh warga sekolah merayakan HUT RI dengan berbagai kegiatan...",
-    href: "/berita/hut-ri-80",
+    title: "Desain Komunikasi Visual",
+    description:
+      "Fokus pada pembuatan konten visual kreatif untuk media cetak dan digital.",
+    icon: "Palette",
+  },
+];
+
+const achievements = [
+  {
+    title: "Juara 1 LKS Nasional",
+    category: "Teknik Komputer",
+    year: "2025",
+    image:
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  },
+  {
+    title: "Medali Emas O2SN",
+    category: "Cabang Atletik",
+    year: "2025",
+    image:
+      "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+  },
+  {
+    title: "Best Short Movie FLS2N",
+    category: "Seni Film",
+    year: "2024",
+    image:
+      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Ahmad Maulana",
+    major: "Lulusan RPL 2022",
+    testimony:
+      "Ilmu yang saya dapatkan di SMKN 14 sangat relevan dengan dunia kerja. Sekarang saya bekerja sebagai Frontend Developer di startup ternama.",
+    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+  },
+  {
+    name: "Siti Nurhaliza",
+    major: "Lulusan DKV 2023",
+    testimony:
+      "Guru-gurunya sangat mendukung passion saya di bidang desain. Fasilitasnya lengkap dan modern. Pengalaman belajar yang tak terlupakan!",
+    avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+  },
+  {
+    name: "Budi Santoso",
+    major: "Lulusan TKJ 2021",
+    testimony:
+      "Berkat program magang dari sekolah, saya langsung direkrut oleh perusahaan tempat saya magang. Terima kasih SMKN 14!",
+    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026707d",
+  },
+];
+
+const galleryImages = [
+  {
+    src: "https://images.unsplash.com/photo-1580582932707-520aed93a94d?w=500",
+    alt: "Gedung Sekolah",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500",
+    alt: "Siswa Belajar Bersama",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500",
+    alt: "Kegiatan Kelas",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500",
+    alt: "Presentasi Siswa",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1531482615713-2c65799b4c2b?w=500",
+    alt: "Workshop Teknologi",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1571260899241-312d1cabc0d8?w=500",
+    alt: "Perpustakaan",
   },
 ];
 ---
@@ -37,111 +104,300 @@ const latestPosts = [
 <PageLayout title="Beranda - SMKN 14 Jakarta">
   <!-- Hero Section -->
   <section
-    class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white bg-gradient-to-r from-primary to-primary-dark"
+    id="hero"
+    class="relative min-h-[60vh] flex items-center justify-center text-center text-white overflow-hidden"
   >
-    <img
-      src="/src/assets/hero/GedungSMKN14.jpg"
-      alt="Gedung Sekolah SMKN 14 Jakarta"
-      class="absolute inset-0 w-full h-full object-cover z-0 opacity-20"
-      loading="eager"
-      decoding="async"
-    />
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-primary/60 z-10"
-    >
+    <div class="absolute inset-0 z-0">
+      <Image
+        src={heroImage}
+        alt="Gedung Sekolah SMKN 14 Jakarta"
+        width={1920}
+        height={1080}
+        format="webp"
+        quality="mid"
+        class="w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-green-900/60 mix-blend-multiply"></div>
     </div>
-    <div class="relative z-20 px-4" data-aos="fade-in">
+    <div class="relative z-10 px-4 animate-fade-in-up">
       <h1
-        class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight"
-        data-aos="fade-down"
-        data-aos-delay="200"
+        class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg"
       >
-        Membentuk Masa Depan, <br />Mencetak Juara
+        SMK Negeri 14 Jakarta
       </h1>
-      <p
-        class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        SMK Negeri 14 Jakarta: Unggul dalam Prestasi, Berkarakter, dan Siap
-        Kerja.
+      <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">
+        Membentuk Generasi Unggul, Kreatif, dan Siap Menghadapi Dunia Kerja.
       </p>
-      <div class="space-x-4" data-aos="fade-up" data-aos-delay="600">
+      <div class="space-x-4">
         <a
           href="/penerimaan"
-          class="bg-secondary hover:bg-secondary-dark text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
-          >Info PPDB</a
+          class="bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl animate-scale-in"
         >
+          Info PPDB
+        </a>
         <a
           href="/tentang"
-          class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-6 rounded-lg border-2 border-white transition-all duration-300"
-          >Selengkapnya</a
+          class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full border-2 border-white transition-all duration-300"
         >
+          Jelajahi
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Latest News Section -->
-  <section class="py-16 bg-neutral dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2
-        class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
-        data-aos="fade-up"
-      >
-        Berita Terbaru
+  <!-- Visi & Misi Section -->
+  <section id="visi-misi" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="animate-fade-in-left">
+          <h2 class="text-3xl font-bold text-primary mb-4">Visi Kami</h2>
+          <p class="text-lg text-gray-600">
+            Menjadi lembaga pendidikan kejuruan yang unggul, menghasilkan
+            lulusan yang kompeten, berakhlak mulia, dan mampu bersaing di
+            tingkat nasional maupun internasional.
+          </p>
+        </div>
+        <div class="animate-fade-in-right">
+          <h2 class="text-3xl font-bold text-primary mb-4">Misi Kami</h2>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <li>
+              Menyelenggarakan pendidikan berbasis teknologi dan industri.
+            </li>
+            <li>Mengembangkan potensi peserta didik secara optimal.</li>
+            <li>
+              Membangun karakter siswa yang berintegritas dan profesional.
+            </li>
+            <li>
+              Menjalin kemitraan strategis dengan dunia usaha dan industri.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Unggulan Section -->
+  <section id="program-unggulan" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-primary mb-2">Program Unggulan</h2>
+      <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
+        Fokus pada keahlian yang paling dibutuhkan oleh industri saat ini.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          featuredPrograms.map((program, index) => (
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-fade-in-up"
+              style={`animation-delay: ${index * 150}ms`}
+            >
+              <div class="bg-green-100 text-green-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                {program.icon === "Network" && <Network class="w-10 h-10" />}
+                {program.icon === "Code" && <Code class="w-10 h-10" />}
+                {program.icon === "Palette" && <Palette class="w-10 h-10" />}
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">
+                {program.title}
+              </h3>
+              <p class="text-gray-600">{program.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Prestasi Section -->
+  <section id="prestasi" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-primary mb-12">
+        Prestasi Terbaru
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
-          latestPosts.map((post, index) => (
-            <a
-              href={post.href}
-              class="group block bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+          achievements.map((item, index) => (
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 animate-fade-in"
+              style={`animation-delay: ${index * 150}ms`}
             >
-              <div class="relative overflow-hidden">
+              <div class="relative h-56">
                 <img
-                  src={post.image}
-                  alt={`Gambar untuk ${post.title}`}
-                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class="w-full h-full object-cover transition-transform duration-500"
+                    loading="lazy"
+                  />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+              <div class="p-5">
+                <p class="text-sm font-semibold text-primary mb-1">
+                  {item.category} - {item.year}
+                </p>
+                <h3 class="text-lg font-bold text-gray-800">{item.title}</h3>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni Alumni Section -->
+  <section id="testimoni" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Apa Kata Alumni?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          testimonials.map((testimonial, index) => (
+            <div
+              class="bg-white/10 p-8 rounded-xl backdrop-blur-sm animate-fade-in-up"
+              style={`animation-delay: ${index * 150}ms`}
+            >
+              <p class="mb-6 text-green-100">"{testimonial.testimony}"</p>
+              <div class="flex items-center">
+                <img
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    class="w-12 h-12 rounded-full mr-4 border-2 border-white/50"
+                    loading="lazy"
+                  />
+                <div>
+                  <h4 class="font-bold">{testimonial.name}</h4>
+                  <p class="text-sm text-green-200">{testimonial.major}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri Section -->
+  <section id="galeri" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center text-primary mb-12">
+        Galeri Sekolah
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {
+          galleryImages.map((image, index) => (
+            <div
+              class={`overflow-hidden rounded-lg shadow-md animate-zoom-in ${index === 0 ? "col-span-2 row-span-2" : ""}`}
+              style={`animation-delay: ${index * 100}ms`}
+            >
+              <img
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  class="w-full h-full object-cover transform transition-transform duration-500 cursor-pointer"
+                  loading="lazy"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 font-medium">
-                  {post.date} • {post.author}
-                </p>
-                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
-                  {post.excerpt}
-                </p>
-              </div>
-            </a>
+            </div>
           ))
         }
       </div>
       <div class="text-center mt-12">
         <a
-          href="/berita"
-          class="inline-flex items-center text-primary hover:text-primary-dark font-semibold text-lg transition-colors duration-300 group"
+          href="/galeri"
+          class="bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
         >
-          Lihat Semua Berita
-          <svg
-            class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-          </svg>
+          Lihat Semua Foto
         </a>
       </div>
     </div>
   </section>
 </PageLayout>
+
+<!-- <style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes scale-in {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+  }
+  .animate-fade-in-left {
+    animation: fade-in-left 0.8s ease-out forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+  }
+  .animate-fade-in-right {
+    animation: fade-in-right 0.8s ease-out forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+  }
+  .animate-zoom-in {
+    animation: zoom-in 0.6s ease-out forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+    animation-fill-mode: both;
+    opacity: 0;
+  } -->
+</style>

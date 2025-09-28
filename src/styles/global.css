@@ -1,18 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #059669; /* Emerald green */
+  --color-primary: #059669;
   --color-primary-hover: #047857;
-  --color-secondary: #2563eb; /* Blue accent */
-  --color-background: #f9fafb; /* Light gray */
-  --color-dark-bg: #111827; /* Dark mode background */
-  --color-dark-text: #e5e7eb; /* Dark mode text */
-  --color-footer-bg: #1f2937;
-  --color-footer-text: #9ca3af;
+  --color-secondary: #4aa7ff;
+  --color-background: #f9fafb;
+  --color-footer-bg: #059669;
+  --color-footer-text: #ffffff;
 }
-
-
-html {
-  @apply scroll-smooth;
-}
-
