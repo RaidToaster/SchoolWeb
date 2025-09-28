@@ -1,11 +1,147 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Mengambil 3 berita terbaru untuk ditampilkan di beranda
+const latestPosts = [
+  {
+    title:
+      "Siswa SMKN 14 Jakarta Raih Juara 1 Lomba Kompetensi Siswa Tingkat Nasional",
+    date: "25 September 2025",
+    author: "Humas Sekolah",
+    image:
+      "https://via.placeholder.com/400x250/007BFF/FFFFFF?text=LKS+Nasional",
+    excerpt: "Prestasi membanggakan kembali diukir oleh siswa kami...",
+    href: "/berita/lks-nasional-2025",
+  },
+  {
+    title: "Workshop Internet of Things (IoT) untuk Kelas XI",
+    date: "22 September 2025",
+    author: "Jurusan TKJ",
+    image:
+      "https://via.placeholder.com/400x250/6C757D/FFFFFF?text=Workshop+IoT",
+    excerpt: "Jurusan Teknik Komputer dan Jaringan mengadakan workshop...",
+    href: "/berita/workshop-iot",
+  },
+  {
+    title: "Peringatan Hari Kemerdekaan RI ke-80 di SMKN 14 Jakarta",
+    date: "17 Agustus 2025",
+    author: "OSIS",
+    image: "https://via.placeholder.com/400x250/28A745/FFFFFF?text=HUT+RI+80",
+    excerpt:
+      "Seluruh warga sekolah merayakan HUT RI dengan berbagai kegiatan...",
+    href: "/berita/hut-ri-80",
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<PageLayout title="Beranda - SMKN 14 Jakarta">
+  <!-- Hero Section -->
+  <section
+    class="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white bg-gradient-to-r from-primary to-primary-dark"
+  >
+    <img
+      src="/src/assets/hero/GedungSMKN14.jpg"
+      alt="Gedung Sekolah SMKN 14 Jakarta"
+      class="absolute inset-0 w-full h-full object-cover z-0 opacity-20"
+      loading="eager"
+      decoding="async"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/30 to-primary/60 z-10"
+    >
+    </div>
+    <div class="relative z-20 px-4" data-aos="fade-in">
+      <h1
+        class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight"
+        data-aos="fade-down"
+        data-aos-delay="200"
+      >
+        Membentuk Masa Depan, <br />Mencetak Juara
+      </h1>
+      <p
+        class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        SMK Negeri 14 Jakarta: Unggul dalam Prestasi, Berkarakter, dan Siap
+        Kerja.
+      </p>
+      <div class="space-x-4" data-aos="fade-up" data-aos-delay="600">
+        <a
+          href="/penerimaan"
+          class="bg-secondary hover:bg-secondary-dark text-white font-bold py-3 px-6 rounded-lg transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
+          >Info PPDB</a
+        >
+        <a
+          href="/tentang"
+          class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-6 rounded-lg border-2 border-white transition-all duration-300"
+          >Selengkapnya</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News Section -->
+  <section class="py-16 bg-neutral dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2
+        class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
+        data-aos="fade-up"
+      >
+        Berita Terbaru
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          latestPosts.map((post, index) => (
+            <a
+              href={post.href}
+              class="group block bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <div class="relative overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={`Gambar untuk ${post.title}`}
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                  {post.title}
+                </h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 font-medium">
+                  {post.date} • {post.author}
+                </p>
+                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+                  {post.excerpt}
+                </p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+      <div class="text-center mt-12">
+        <a
+          href="/berita"
+          class="inline-flex items-center text-primary hover:text-primary-dark font-semibold text-lg transition-colors duration-300 group"
+        >
+          Lihat Semua Berita
+          <svg
+            class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

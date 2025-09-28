@@ -1,0 +1,39 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const galleryImages = [
+  { src: "https://via.placeholder.com/500x300/007BFF/FFFFFF?text=Kegiatan+Belajar", alt: "Suasana belajar mengajar di dalam kelas", caption: "Proses Belajar Mengajar" },
+  { src: "https://via.placeholder.com/500x300/28A745/FFFFFF?text=Praktik+Lab", alt: "Siswa sedang praktik di laboratorium komputer", caption: "Praktik di Laboratorium" },
+  { src: "https://via.placeholder.com/500x300/DC3545/FFFFFF?text=Lomba+Olahraga", alt: "Pertandingan basket antar kelas", caption: "Kompetisi Olahraga" },
+  { src: "https://via.placeholder.com/500x300/FFC107/FFFFFF?text=Acara+Sekolah", alt: "Pentas seni dalam acara perpisahan sekolah", caption: "Pentas Seni Tahunan" },
+  { src: "https://via.placeholder.com/500x300/17A2B8/FFFFFF?text=Ekstrakurikuler", alt: "Anggota pramuka sedang mendirikan tenda", caption: "Kegiatan Pramuka" },
+  { src: "https://via.placeholder.com/500x300/6C757D/FFFFFF?text=Studi+Tur", alt: "Siswa berfoto di depan monumen saat studi tur", caption: "Studi Tur Edukatif" },
+  { src: "https://via.placeholder.com/500x300/343A40/FFFFFF?text=Kelulusan", alt: "Siswa-siswi merayakan kelulusan", caption: "Momen Kelulusan" },
+  { src: "https://via.placeholder.com/500x300/007BFF/FFFFFF?text=Perpustakaan", alt: "Siswa sedang membaca buku di perpustakaan", caption: "Suasana Perpustakaan" },
+  { src: "https://via.placeholder.com/500x300/28A745/FFFFFF?text=Upacara+Bendera", alt: "Pelaksanaan upacara bendera di hari Senin", caption: "Upacara Bendera" },
+];
+---
+
+<PageLayout title="Galeri - SMKN 14 Jakarta">
+  <section class="py-12 bg-neutral dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4" data-aos="fade-down">Galeri Sekolah</h1>
+        <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">Momen-momen berharga yang terekam di SMKN 14 Jakarta.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {galleryImages.map((image, index) => (
+          <div class="group relative overflow-hidden rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay={index * 50}>
+            <img src={image.src} alt={image.alt} class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500 ease-in-out" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-500"></div>
+            <div class="absolute bottom-0 left-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+              <h3 class="text-white text-lg font-bold">{image.caption}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>
