@@ -1,0 +1,93 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const pedomanKeuangan = [
+  {
+    no: 1,
+    nama: "Pedoman Pengelolaan Keuangan Sekolah",
+    deskripsi: "Panduan umum pengelolaan keuangan di SMKN 14 Jakarta",
+    tahun: "2024",
+    versi: "Versi 3.2"
+  },
+  {
+    no: 2,
+    nama: "SOP Penyusunan Anggaran",
+    deskripsi: "Standar operasional prosedur penyusunan anggaran pendapatan dan belanja sekolah",
+    tahun: "2024",
+    versi: "Versi 2.0"
+  },
+  {
+    no: 3,
+    nama: "Pedoman Pengelolaan BOS",
+    deskripsi: "Panduan pengelolaan dana Bantuan Operasional Sekolah (BOS)",
+    tahun: "2024",
+    versi: "Versi 2.5"
+  },
+  {
+    no: 4,
+    nama: "SOP Pengadaan Barang dan Jasa",
+    deskripsi: "Standar operasional prosedur pengadaan barang dan jasa di sekolah",
+    tahun: "2023",
+    versi: "Versi 1.8"
+  },
+  {
+    no: 5,
+    nama: "Pedoman Pertanggungjawaban Keuangan",
+    deskripsi: "Panduan pertanggungjawaban dan pelaporan keuangan sekolah",
+    tahun: "2024",
+    versi: "Versi 2.1"
+  },
+  {
+    no: 6,
+    nama: "SOP Audit Internal",
+    deskripsi: "Standar operasional prosedur audit internal keuangan sekolah",
+    tahun: "2023",
+    versi: "Versi 1.5"
+  }
+];
+---
+
+<PageLayout title="Pedoman Pengelolaan Keuangan - SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Pedoman Pengelolaan Keuangan</h1>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">No.</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Nama Pedoman</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Deskripsi</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Tahun</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Versi</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Download</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              {pedomanKeuangan.map((item) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.deskripsi}</td>
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.tahun}</td>
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.versi}</td>
+                  <td class="px-6 py-4 text-center">
+                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                      📥 Download
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 mb-4">Pedoman keuangan memastikan transparansi dan akuntabilitas pengelolaan keuangan sekolah.</p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

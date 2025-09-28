@@ -1,0 +1,85 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Pengumuman - PPID SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Pengumuman</h1>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="md:col-span-2">
+          <div class="space-y-6">
+            <!-- Important Announcement -->
+            <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">PENTING</span>
+                <span class="text-sm text-gray-500 ml-auto">2 jam yang lalu</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Pelayanan Informasi Publik Tutup Hari Libur</h3>
+              <p class="text-gray-600 mb-4">Dalam rangka Hari Raya Idul Fitri 1446 H, pelayanan informasi publik PPID SMKN 14 Jakarta akan tutup sementara pada tanggal 30 Maret - 2 April 2025.</p>
+              <a href="#" class="text-red-600 hover:text-red-800 font-medium">Baca Selengkapnya →</a>
+            </div>
+
+            <!-- Regular Announcement -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">INFORMASI</span>
+                <span class="text-sm text-gray-500 ml-auto">1 hari yang lalu</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Formulir Permohonan Informasi Online Sudah Aktif</h3>
+              <p class="text-gray-600 mb-4">Masyarakat dapat mengajukan permohonan informasi publik melalui formulir online yang tersedia di website PPID SMKN 14 Jakarta.</p>
+              <a href="/ppid/form-permohonan" class="text-blue-600 hover:text-blue-800 font-medium">Akses Formulir →</a>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-center mb-3">
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">UPDATE</span>
+                <span class="text-sm text-gray-500 ml-auto">3 hari yang lalu</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2">Update Prosedur Permohonan Informasi</h3>
+              <p class="text-gray-600 mb-4">Prosedur permohonan informasi publik telah diperbarui sesuai dengan regulasi terbaru. Silakan baca prosedur terbaru untuk kelancaran pengajuan.</p>
+              <a href="/standar-layanan/prosedur" class="text-blue-600 hover:text-blue-800 font-medium">Lihat Prosedur →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Filter Pengumuman</h3>
+            <div class="space-y-3">
+              <label class="flex items-center">
+                <input type="checkbox" class="mr-2" checked>
+                <span class="text-sm">Semua</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="mr-2">
+                <span class="text-sm">Penting</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="mr-2">
+                <span class="text-sm">Informasi</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="mr-2">
+                <span class="text-sm">Update</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-blue-800 mb-4">Butuh Bantuan?</h3>
+            <p class="text-blue-700 text-sm mb-4">Jika Anda memiliki pertanyaan atau kesulitan dalam mengakses informasi, silakan hubungi kami.</p>
+            <a
+              href="/kontak"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300 inline-block"
+            >
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

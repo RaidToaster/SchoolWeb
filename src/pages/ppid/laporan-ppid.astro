@@ -1,0 +1,84 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const laporanPPID = [
+  {
+    no: 1,
+    jenis: "Laporan Tahunan",
+    nama: "Laporan Keterbukaan Informasi Publik Tahun 2023",
+    periode: "Januari - Desember 2023",
+    tanggal: "31 Januari 2024"
+  },
+  {
+    no: 2,
+    jenis: "Laporan Triwulan",
+    nama: "Laporan PPID Triwulan IV Tahun 2023",
+    periode: "Oktober - Desember 2023",
+    tanggal: "15 Januari 2024"
+  },
+  {
+    no: 3,
+    jenis: "Laporan Triwulan",
+    nama: "Laporan PPID Triwulan III Tahun 2023",
+    periode: "Juli - September 2023",
+    tanggal: "15 Oktober 2023"
+  },
+  {
+    no: 4,
+    jenis: "Laporan Triwulan",
+    nama: "Laporan PPID Triwulan II Tahun 2023",
+    periode: "April - Juni 2023",
+    tanggal: "15 Juli 2023"
+  },
+  {
+    no: 5,
+    jenis: "Laporan Triwulan",
+    nama: "Laporan PPID Triwulan I Tahun 2023",
+    periode: "Januari - Maret 2023",
+    tanggal: "15 April 2023"
+  }
+];
+---
+
+<PageLayout title="Laporan PPID - PPID SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Laporan PPID</h1>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">No.</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Jenis Laporan</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Nama Laporan</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Periode</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Download</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              {laporanPPID.map((item) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.jenis}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.periode}</td>
+                  <td class="px-6 py-4 text-center">
+                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                      📥 Download
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 mb-4">Laporan PPID disusun secara berkala untuk memastikan transparansi dan akuntabilitas pengelolaan informasi publik.</p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

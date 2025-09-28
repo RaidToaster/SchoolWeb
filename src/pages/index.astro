@@ -1,329 +1,332 @@
 ---
-import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
-import heroImage from "@assets/hero/GedungSMKN14.jpg";
-import { Network, Code, Palette } from "lucide-astro";
+import {
+  Users,
+  FileText,
+  Newspaper,
+  UserCheck,
+  Shield,
+  BookOpen,
+  Calendar,
+  Download,
+  HelpCircle,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  AlertCircle,
+  Info,
+  ExternalLink,
+} from "lucide-astro";
 
-const featuredPrograms = [
+const quickMenus = [
   {
-    title: "Teknik Komputer & Jaringan",
+    title: "Profil",
     description:
-      "Mempelajari perakitan, instalasi, dan pemeliharaan jaringan komputer.",
-    icon: "Network",
+      "Informasi profil singkat, visi misi, dan struktur organisasi PPID",
+    href: "/profil",
+    icon: Users,
+    color: "bg-blue-500",
   },
   {
-    title: "Rekayasa Perangkat Lunak",
-    description:
-      "Mengembangkan aplikasi web, mobile, dan desktop dengan teknologi terkini.",
-    icon: "Code",
+    title: "Regulasi",
+    description: "Peraturan dan kebijakan terkait informasi publik",
+    href: "/regulasi",
+    icon: FileText,
+    color: "bg-green-500",
   },
   {
-    title: "Desain Komunikasi Visual",
-    description:
-      "Fokus pada pembuatan konten visual kreatif untuk media cetak dan digital.",
-    icon: "Palette",
+    title: "Informasi Berkala",
+    description: "Informasi yang harus diumumkan secara berkala",
+    href: "/berita",
+    icon: Newspaper,
+    color: "bg-purple-500",
+  },
+  {
+    title: "Layanan",
+    description: "Prosedur permohonan informasi dan layanan publik",
+    href: "/standar-layanan",
+    icon: UserCheck,
+    color: "bg-orange-500",
   },
 ];
 
-const achievements = [
+const latestNews = [
   {
-    title: "Juara 1 LKS Nasional",
-    category: "Teknik Komputer",
-    year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    title: "Pengumuman Seleksi PPID Periode 2025",
+    date: "15 Januari 2025",
+    excerpt:
+      "Pendaftaran seleksi Pejabat Pengelola Informasi dan Dokumentasi (PPID) untuk periode 2025 telah dibuka...",
+    category: "Pengumuman",
   },
   {
-    title: "Medali Emas O2SN",
-    category: "Cabang Atletik",
-    year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+    title: "Laporan Tahunan PPID SMKN 14 Jakarta 2024",
+    date: "10 Januari 2025",
+    excerpt:
+      "Laporan tahunan kinerja PPID SMKN 14 Jakarta tahun 2024 telah dipublikasikan...",
+    category: "Laporan",
   },
   {
-    title: "Best Short Movie FLS2N",
-    category: "Seni Film",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Ahmad Maulana",
-    major: "Lulusan RPL 2022",
-    testimony:
-      "Ilmu yang saya dapatkan di SMKN 14 sangat relevan dengan dunia kerja. Sekarang saya bekerja sebagai Frontend Developer di startup ternama.",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-  },
-  {
-    name: "Siti Nurhaliza",
-    major: "Lulusan DKV 2023",
-    testimony:
-      "Guru-gurunya sangat mendukung passion saya di bidang desain. Fasilitasnya lengkap dan modern. Pengalaman belajar yang tak terlupakan!",
-    avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-  },
-  {
-    name: "Budi Santoso",
-    major: "Lulusan TKJ 2021",
-    testimony:
-      "Berkat program magang dari sekolah, saya langsung direkrut oleh perusahaan tempat saya magang. Terima kasih SMKN 14!",
-    avatar: "https://i.pravatar.cc/150?u=a042581f4e29026707d",
+    title: "Update Prosedur Permohonan Informasi",
+    date: "5 Januari 2025",
+    excerpt:
+      "Prosedur permohonan informasi publik telah diperbarui sesuai dengan regulasi terbaru...",
+    category: "Informasi",
   },
 ];
 
-const galleryImages = [
+const announcements = [
   {
-    src: "https://images.unsplash.com/photo-1580582932707-520aed93a94d?w=500",
-    alt: "Gedung Sekolah",
+    title: "Pelayanan Informasi Publik Tutup Hari Libur",
+    type: "Penting",
+    date: "Hari ini",
   },
   {
-    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500",
-    alt: "Siswa Belajar Bersama",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500",
-    alt: "Kegiatan Kelas",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500",
-    alt: "Presentasi Siswa",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1531482615713-2c65799b4c2b?w=500",
-    alt: "Workshop Teknologi",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1571260899241-312d1cabc0d8?w=500",
-    alt: "Perpustakaan",
+    title: "Formulir Permohonan Informasi Online Sudah Aktif",
+    type: "Informasi",
+    date: "2 hari lalu",
   },
 ];
 ---
 
-<PageLayout title="Beranda - SMKN 14 Jakarta">
+<PageLayout title="Beranda - PPID SMKN 14 Jakarta">
   <!-- Hero Section -->
   <section
-    id="hero"
-    class="relative min-h-[60vh] flex items-center justify-center text-center text-white overflow-hidden"
+    class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-gradient-to-br from-primary to-primary-hover"
   >
-    <div class="absolute inset-0 z-0">
-      <Image
-        src={heroImage}
-        alt="Gedung Sekolah SMKN 14 Jakarta"
-        width={1920}
-        height={1080}
-        format="webp"
-        quality="mid"
-        class="w-full h-full object-cover object-center"
-      />
-      <div class="absolute inset-0 bg-green-900/60 mix-blend-multiply"></div>
-    </div>
-    <div class="relative z-10 px-4" data-aos="fade-up">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative z-10 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+      <div class="mb-6" data-aos="zoom-in" data-aos-delay="100">
+        <div
+          class="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full mb-6"
+        >
+          <Shield class="w-12 h-12 text-white" />
+        </div>
+      </div>
+
       <h1
-        class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-        SMK Negeri 14 Jakarta
-      </h1>
-      <p
-        class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md"
+        class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg"
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        Membentuk Generasi Unggul, Kreatif, dan Siap Menghadapi Dunia Kerja.
-      </p>
-      <div class="space-x-4" data-aos="fade-up" data-aos-delay="300">
-        <a
-          href="/penerimaan"
-          class="bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
-        >
-          Info PPDB
-        </a>
-        <a
-          href="/tentang"
-          class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full border-2 border-white transition-all duration-300"
-        >
-          Jelajahi
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Visi & Misi Section -->
-  <section id="visi-misi" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div data-aos="fade-right">
-          <h2 class="text-3xl font-bold text-primary mb-4">Visi Kami</h2>
-          <p class="text-lg text-gray-600">
-            Menjadi lembaga pendidikan kejuruan yang unggul, menghasilkan
-            lulusan yang kompeten, berakhlak mulia, dan mampu bersaing di
-            tingkat nasional maupun internasional.
-          </p>
-        </div>
-        <div data-aos="fade-left">
-          <h2 class="text-3xl font-bold text-primary mb-4">Misi Kami</h2>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>
-              Menyelenggarakan pendidikan berbasis teknologi dan industri.
-            </li>
-            <li>Mengembangkan potensi peserta didik secara optimal.</li>
-            <li>
-              Membangun karakter siswa yang berintegritas dan profesional.
-            </li>
-            <li>
-              Menjalin kemitraan strategis dengan dunia usaha dan industri.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Program Unggulan Section -->
-  <section id="program-unggulan" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-      <h2 class="text-4xl font-bold text-primary mb-2">Program Unggulan</h2>
-      <p class="text-lg text-gray-500 mb-12 max-w-2xl mx-auto">
-        Fokus pada keahlian yang paling dibutuhkan oleh industri saat ini.
-      </p>
-      <div class="grid md:grid-cols-3 gap-8">
-        {
-          featuredPrograms.map((program, index) => (
-            <div
-              class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div class="bg-green-100 text-green-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                {program.icon === "Network" && <Network class="w-10 h-10" />}
-                {program.icon === "Code" && <Code class="w-10 h-10" />}
-                {program.icon === "Palette" && <Palette class="w-10 h-10" />}
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-3">
-                {program.title}
-              </h3>
-              <p class="text-gray-600">{program.description}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- Prestasi Section -->
-  <section id="prestasi" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <h2
-        class="text-4xl font-bold text-center text-primary mb-12"
+        PPID SMKN 14 Jakarta
+      </h1>
+      <p
+        class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto drop-shadow-md leading-relaxed"
         data-aos="fade-up"
+        data-aos-delay="300"
       >
-        Prestasi Terbaru
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        Pejabat Pengelola Informasi dan Dokumentasi untuk layanan publik yang
+        transparan, akuntabel, dan mudah diakses oleh masyarakat.
+      </p>
+
+      <div
+        class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <a
+          href="/ppid/form-permohonan-informasi"
+          class="bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl flex items-center"
+        >
+          <Info class="w-5 h-5 mr-2" />
+          Ajukan Permohonan Informasi
+        </a>
+        <a
+          href="/ppid/daftar-informasi-publik"
+          class="bg-transparent hover:bg-white hover:text-blue-900 text-white font-bold py-4 px-8 rounded-full border-2 border-white transition-all duration-300 flex items-center"
+        >
+          <ExternalLink class="w-5 h-5 mr-2" />
+          Daftar Informasi Publik
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Menu Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Menu Utama</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Akses cepat ke informasi dan layanan PPID SMKN 14 Jakarta
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {
-          achievements.map((item, index) => (
-            <div
-              class="bg-white rounded-lg shadow-md overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300"
+          quickMenus.map((menu, index) => (
+            <a
+              href={menu.href}
+              class="group bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 border border-gray-100"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div class="relative h-56">
-                <img
-                  src={item.image}
-                    alt={item.title}
-                    class="w-full h-full object-cover transition-transform duration-500"
-                    loading="lazy"
-                  />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div
+                class={`${menu.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <menu.icon class="w-8 h-8 text-white" />
               </div>
-              <div class="p-5">
-                <p class="text-sm font-semibold text-primary mb-1">
-                  {item.category} - {item.year}
-                </p>
-                <h3 class="text-lg font-bold text-gray-800">{item.title}</h3>
-              </div>
-            </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3 text-center group-hover:text-blue-600 transition-colors duration-300">
+                {menu.title}
+              </h3>
+              <p class="text-gray-600 text-center text-sm leading-relaxed">
+                {menu.description}
+              </p>
+            </a>
           ))
         }
       </div>
     </div>
   </section>
 
-  <!-- Testimoni Alumni Section -->
-  <section id="testimoni" class="py-20 bg-primary text-white">
+  <!-- Latest News Section -->
+  <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
-        Apa Kata Alumni?
-      </h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        {
-          testimonials.map((testimonial, index) => (
-            <div
-              class="bg-white/10 p-8 rounded-xl backdrop-blur-sm"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <p class="mb-6 text-green-100">"{testimonial.testimony}"</p>
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- News -->
+        <div class="lg:w-2/3">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8" data-aos="fade-up">
+            Berita & Informasi Terbaru
+          </h2>
+          <div class="space-y-6">
+            {
+              latestNews.map((news, index) => (
+                <article
+                  class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <div class="flex items-start justify-between mb-3">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
+                      {news.category}
+                    </span>
+                    <span class="text-sm text-gray-500">{news.date}</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-800 mb-3 hover:text-blue-600 transition-colors duration-300">
+                    {news.title}
+                  </h3>
+                  <p class="text-gray-600 leading-relaxed">{news.excerpt}</p>
+                  <a
+                    href="/pengumuman"
+                    class="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800 font-medium"
+                  >
+                    Baca Selengkapnya
+                    <ExternalLink class="w-4 h-4 ml-1" />
+                  </a>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:w-1/3">
+          <!-- Announcements -->
+          <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+              <AlertCircle class="w-5 h-5 mr-2 text-yellow-500" />
+              Pengumuman
+            </h3>
+            <div class="space-y-4">
+              {
+                announcements.map((announcement, index) => (
+                  <div
+                    class="border-l-4 border-yellow-400 pl-4 py-2"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 50}
+                  >
+                    <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded">
+                      {announcement.type}
+                    </span>
+                    <h4 class="font-medium text-gray-800 mt-1">
+                      {announcement.title}
+                    </h4>
+                    <p class="text-sm text-gray-500">{announcement.date}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+              <Phone class="w-5 h-5 mr-2 text-blue-500" />
+              Kontak PPID
+            </h3>
+            <div class="space-y-4">
               <div class="flex items-center">
-                <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    class="w-12 h-12 rounded-full mr-4 border-2 border-white/50"
-                    loading="lazy"
-                  />
+                <MapPin class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
                 <div>
-                  <h4 class="font-bold">{testimonial.name}</h4>
-                  <p class="text-sm text-green-200">{testimonial.major}</p>
+                  <p class="text-sm font-medium text-gray-800">Alamat</p>
+                  <p class="text-sm text-gray-600">
+                    Jl. Percetakan Negara IIA No.2, Johar Baru, Jakarta Pusat
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <Phone class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
+                <div>
+                  <p class="text-sm font-medium text-gray-800">Telepon</p>
+                  <p class="text-sm text-gray-600">(021) 1234-5678</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <Mail class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
+                <div>
+                  <p class="text-sm font-medium text-gray-800">Email</p>
+                  <p class="text-sm text-gray-600">ppid@smkn14jkt.sch.id</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <Clock class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
+                <div>
+                  <p class="text-sm font-medium text-gray-800">Jam Layanan</p>
+                  <p class="text-sm text-gray-600">
+                    Senin - Jumat: 08:00 - 16:00 WIB
+                  </p>
                 </div>
               </div>
             </div>
-          ))
-        }
+            <div class="mt-6 pt-6 border-t border-gray-200">
+              <a
+                href="/ppid/form-pengaduan"
+                class="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center"
+              >
+                <AlertCircle class="w-4 h-4 mr-2" />
+                Ajukan Pengaduan
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Galeri Section -->
-  <section id="galeri" class="py-20 bg-gray-50">
+  <!-- Stats Section -->
+  <!-- <section class="py-16 bg-blue-900 text-white">
     <div class="container mx-auto px-6">
-      <h2
-        class="text-4xl font-bold text-center text-primary mb-12"
-        data-aos="fade-up"
-      >
-        Galeri Sekolah
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {
-          galleryImages.map((image, index) => (
-            <div
-              class={`overflow-hidden rounded-lg shadow-md ${index === 0 ? "col-span-2 row-span-2" : ""}`}
-              data-aos="zoom-in"
-              data-aos-delay={index * 50}
-            >
-              <img
-                  src={image.src}
-                  alt={image.alt}
-                  class="w-full h-full object-cover transform transition-transform duration-500 cursor-pointer"
-                  loading="lazy"
-                />
-            </div>
-          ))
-        }
-      </div>
-      <div class="text-center mt-12">
-        <a
-          href="/galeri"
-          class="bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
-          data-aos="fade-up"
-        >
-          Lihat Semua Foto
-        </a>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div data-aos="fade-up" data-aos-delay="0">
+          <div class="text-3xl font-bold mb-2">1,200+</div>
+          <div class="text-blue-200">Informasi Publik</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl font-bold mb-2">500+</div>
+          <div class="text-blue-200">Permohonan Dilayani</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl font-bold mb-2">98%</div>
+          <div class="text-blue-200">Tingkat Kepuasan</div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <div class="text-3xl font-bold mb-2">24/7</div>
+          <div class="text-blue-200">Akses Online</div>
+        </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </PageLayout>
 
 <style>

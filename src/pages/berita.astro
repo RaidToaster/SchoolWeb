@@ -1,82 +1,71 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-
-const posts = [
-  {
-    title: "Siswa SMKN 14 Jakarta Raih Juara 1 Lomba Kompetensi Siswa Tingkat Nasional",
-    date: "25 September 2025",
-    author: "Humas Sekolah",
-    image: "https://via.placeholder.com/400x250/007BFF/FFFFFF?text=LKS+Nasional",
-    excerpt: "Prestasi membanggakan kembali diukir oleh siswa kami dalam ajang LKS tingkat nasional bidang teknologi...",
-    href: "/berita/lks-nasional-2025"
-  },
-  {
-    title: "Workshop Internet of Things (IoT) untuk Kelas XI",
-    date: "22 September 2025",
-    author: "Jurusan TKJ",
-    image: "https://via.placeholder.com/400x250/6C757D/FFFFFF?text=Workshop+IoT",
-    excerpt: "Sebagai bagian dari program peningkatan kompetensi, jurusan Teknik Komputer dan Jaringan mengadakan workshop...",
-    href: "/berita/workshop-iot"
-  },
-  {
-    title: "Peringatan Hari Kemerdekaan RI ke-80 di SMKN 14 Jakarta",
-    date: "17 Agustus 2025",
-    author: "OSIS",
-    image: "https://via.placeholder.com/400x250/28A745/FFFFFF?text=HUT+RI+80",
-    excerpt: "Dengan semangat patriotisme, seluruh warga sekolah merayakan HUT RI dengan berbagai kegiatan dan lomba...",
-    href: "/berita/hut-ri-80"
-  },
-    {
-    title: "Kunjungan Industri ke Perusahaan Teknologi Terkemuka",
-    date: "10 Agustus 2025",
-    author: "BKK Sekolah",
-    image: "https://via.placeholder.com/400x250/DC3545/FFFFFF?text=Kunjungan+Industri",
-    excerpt: "Siswa-siswi kelas XII mendapatkan wawasan langsung dari dunia industri melalui kunjungan ke beberapa perusahaan...",
-    href: "/berita/kunjungan-industri"
-  },
-  {
-    title: "Program Sekolah Hijau: Menanam 1000 Pohon",
-    date: "5 Agustus 2025",
-    author: "Tim Adiwiyata",
-    image: "https://via.placeholder.com/400x250/FFC107/FFFFFF?text=Sekolah+Hijau",
-    excerpt: "Dalam rangka mendukung program Adiwiyata, SMKN 14 Jakarta melaksanakan gerakan menanam 1000 pohon di lingkungan...",
-    href: "/berita/sekolah-hijau"
-  },
-  {
-    title: "Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027 Dibuka",
-    date: "1 Agustus 2025",
-    author: "Panitia PPDB",
-    image: "https://via.placeholder.com/400x250/17A2B8/FFFFFF?text=PPDB+2026",
-    excerpt: "Informasi lengkap mengenai jadwal, alur, dan persyaratan Pendaftaran Peserta Didik Baru (PPDB) tahun ajaran...",
-    href: "/penerimaan"
-  },
-];
 ---
 
-<PageLayout title="Berita & Acara - SMKN 14 Jakarta">
-  <section class="py-12 bg-neutral">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4" data-aos="fade-down">Berita & Acara</h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Ikuti perkembangan terbaru dari kegiatan dan prestasi di sekolah kami.</p>
-      </div>
+<PageLayout title="Berita - PPID SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Berita & Informasi</h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post, index) => (
-          <a href={post.href} class="group block bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay={index * 100}>
-            <div class="relative overflow-hidden">
-              <img src={post.image} alt={`Gambar untuk ${post.title}`} class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Featured News -->
+        <div class="md:col-span-2">
+          <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            <div class="h-64 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+            <div class="p-8">
+              <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded">Pengumuman</span>
+              <h2 class="text-2xl font-bold text-gray-800 mt-4 mb-4">Pengumuman Seleksi PPID Periode 2025</h2>
+              <p class="text-gray-600 leading-relaxed mb-4">
+                Pendaftaran seleksi Pejabat Pengelola Informasi dan Dokumentasi (PPID) untuk periode 2025 telah dibuka mulai tanggal 1 Januari 2025. Seleksi ini terbuka untuk seluruh pegawai SMKN 14 Jakarta yang memenuhi syarat.
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm text-gray-500">15 Januari 2025</span>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Baca Selengkapnya →</a>
+              </div>
             </div>
-            <div class="p-6">
-              <h2 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">{post.title}</h2>
-              <p class="text-sm text-gray-500 mb-4 font-medium">{post.date} • {post.author}</p>
-              <p class="text-gray-600 line-clamp-3">{post.excerpt}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+          </article>
 
+          <!-- News Grid -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <article class="bg-white rounded-lg shadow-md p-6">
+              <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Laporan</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Laporan Tahunan PPID 2024</h3>
+              <p class="text-gray-600 text-sm mb-3">Ringkasan kinerja PPID selama tahun 2024 telah dipublikasikan...</p>
+              <span class="text-xs text-gray-500">10 Januari 2025</span>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md p-6">
+              <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">Update</span>
+              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Update Prosedur Permohonan</h3>
+              <p class="text-gray-600 text-sm mb-3">Prosedur permohonan informasi telah diperbarui...</p>
+              <span class="text-xs text-gray-500">5 Januari 2025</span>
+            </article>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Kategori</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Pengumuman</a></li>
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Laporan</a></li>
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Kegiatan</a></li>
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Informasi</a></li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Arsip</h3>
+            <select class="w-full p-2 border border-gray-300 rounded">
+              <option>Pilih Tahun</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 </PageLayout>

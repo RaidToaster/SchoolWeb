@@ -1,0 +1,111 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Agenda - PPID SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Agenda Kegiatan</h1>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Upcoming Events -->
+        <div class="md:col-span-2">
+          <div class="space-y-6">
+            <!-- Event Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-bold">Januari 2025</h3>
+                  <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Mendatang</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Rapat Koordinasi PPID</h4>
+                <p class="text-gray-600 mb-4">Rapat rutin untuk evaluasi kinerja dan perencanaan program PPID</p>
+                <div class="flex items-center text-sm text-gray-500">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  15 Januari 2025, 09:00 WIB
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div class="bg-gradient-to-r from-green-500 to-teal-600 text-white p-4">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-bold">Februari 2025</h3>
+                  <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Mendatang</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Sosialisasi Keterbukaan Informasi</h4>
+                <p class="text-gray-600 mb-4">Kegiatan sosialisasi kepada masyarakat tentang hak atas informasi publik</p>
+                <div class="flex items-center text-sm text-gray-500">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  20 Februari 2025, 13:00 WIB
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <div class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white p-4">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-lg font-bold">Maret 2025</h3>
+                  <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Mendatang</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h4 class="text-xl font-bold text-gray-800 mb-2">Pelatihan Pengelolaan Informasi</h4>
+                <p class="text-gray-600 mb-4">Pelatihan bagi staf PPID dalam pengelolaan dan pelayanan informasi publik</p>
+                <div class="flex items-center text-sm text-gray-500">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  10 Maret 2025, 08:00 WIB
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendar Widget -->
+        <div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Kalender</h3>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-blue-600 mb-2">15</div>
+              <div class="text-lg text-gray-600 mb-4">Januari 2025</div>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Senin</span>
+                  <span class="text-gray-400">14</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Selasa</span>
+                  <span class="text-blue-600 font-bold">15</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Rabu</span>
+                  <span class="text-gray-400">16</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Kategori Agenda</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Rapat</a></li>
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Sosialisasi</a></li>
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Pelatihan</a></li>
+              <li><a href="#" class="text-blue-600 hover:text-blue-800">Seminar</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,86 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const pedomanAdministrasi = [
+  {
+    no: 1,
+    nama: "Pedoman Pengelolaan Administrasi Sekolah",
+    deskripsi: "Panduan umum pengelolaan administrasi di SMKN 14 Jakarta",
+    tahun: "2024",
+    versi: "Versi 3.0"
+  },
+  {
+    no: 2,
+    nama: "SOP Penerimaan dan Pendistribusian Surat",
+    deskripsi: "Standar operasional prosedur penerimaan, pendistribusian, dan pengarsipan surat",
+    tahun: "2024",
+    versi: "Versi 2.1"
+  },
+  {
+    no: 3,
+    nama: "Pedoman Pengelolaan Arsip",
+    deskripsi: "Panduan pengelolaan arsip aktif, inaktif, dan vital di sekolah",
+    tahun: "2023",
+    versi: "Versi 1.8"
+  },
+  {
+    no: 4,
+    nama: "SOP Penyusunan Laporan",
+    deskripsi: "Standar operasional prosedur penyusunan berbagai jenis laporan sekolah",
+    tahun: "2024",
+    versi: "Versi 2.0"
+  },
+  {
+    no: 5,
+    nama: "Pedoman Penggunaan Sistem Informasi",
+    deskripsi: "Panduan penggunaan sistem informasi manajemen sekolah",
+    tahun: "2024",
+    versi: "Versi 1.5"
+  }
+];
+---
+
+<PageLayout title="Pedoman Pengelolaan Administrasi - SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Pedoman Pengelolaan Administrasi</h1>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">No.</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Nama Pedoman</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Deskripsi</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Tahun</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Versi</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Download</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              {pedomanAdministrasi.map((item) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.deskripsi}</td>
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.tahun}</td>
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.versi}</td>
+                  <td class="px-6 py-4 text-center">
+                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                      📥 Download
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 mb-4">Pedoman administrasi memastikan kelancaran proses administrasi dan manajemen sekolah.</p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

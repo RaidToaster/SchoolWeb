@@ -1,0 +1,202 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+---
+
+<PageLayout title="Form Survei Kepuasan - PPID SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Form Survei Kepuasan</h1>
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="mb-6">
+          <p class="text-gray-600 mb-4">
+            Terima kasih atas partisipasi Anda dalam survei kepuasan layanan PPID SMKN 14 Jakarta.
+            Pendapat Anda sangat berharga untuk meningkatkan kualitas pelayanan kami.
+          </p>
+        </div>
+
+        <form class="space-y-8">
+          <!-- Data Responden -->
+          <div class="border-b border-gray-200 pb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">A. Data Responden</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="nama" class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+
+              <div>
+                <label for="instansi" class="block text-sm font-medium text-gray-700 mb-2">Instansi/Asal</label>
+                <input type="text" id="instansi" name="instansi"
+                       placeholder="Contoh: SMKN 14 Jakarta, Mahasiswa, dll"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" name="email"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+
+              <div>
+                <label for="tanggal_kunjungan" class="block text-sm font-medium text-gray-700 mb-2">Tanggal Kunjungan</label>
+                <input type="date" id="tanggal_kunjungan" name="tanggal_kunjungan"
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+            </div>
+          </div>
+
+          <!-- Kepuasan Layanan -->
+          <div class="border-b border-gray-200 pb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">B. Tingkat Kepuasan Layanan</h2>
+
+            <div class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">1. Bagaimana penilaian Anda terhadap kemudahan akses informasi di website SMKN 14 Jakarta?</label>
+                <div class="flex space-x-4">
+                  <label class="flex items-center">
+                    <input type="radio" name="akses_website" value="5" class="mr-2"> <span class="text-sm">Sangat Mudah (5)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="akses_website" value="4" class="mr-2"> <span class="text-sm">Mudah (4)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="akses_website" value="3" class="mr-2"> <span class="text-sm">Cukup (3)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="akses_website" value="2" class="mr-2"> <span class="text-sm">Sulit (2)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="akses_website" value="1" class="mr-2"> <span class="text-sm">Sangat Sulit (1)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">2. Bagaimana penilaian Anda terhadap kecepatan pelayanan PPID?</label>
+                <div class="flex space-x-4">
+                  <label class="flex items-center">
+                    <input type="radio" name="kecepatan_pelayanan" value="5" class="mr-2"> <span class="text-sm">Sangat Cepat (5)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kecepatan_pelayanan" value="4" class="mr-2"> <span class="text-sm">Cepat (4)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kecepatan_pelayanan" value="3" class="mr-2"> <span class="text-sm">Cukup (3)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kecepatan_pelayanan" value="2" class="mr-2"> <span class="text-sm">Lambat (2)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kecepatan_pelayanan" value="1" class="mr-2"> <span class="text-sm">Sangat Lambat (1)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">3. Bagaimana penilaian Anda terhadap kesopanan dan keramahan petugas PPID?</label>
+                <div class="flex space-x-4">
+                  <label class="flex items-center">
+                    <input type="radio" name="kesopanan_petugas" value="5" class="mr-2"> <span class="text-sm">Sangat Baik (5)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kesopanan_petugas" value="4" class="mr-2"> <span class="text-sm">Baik (4)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kesopanan_petugas" value="3" class="mr-2"> <span class="text-sm">Cukup (3)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kesopanan_petugas" value="2" class="mr-2"> <span class="text-sm">Kurang (2)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kesopanan_petugas" value="1" class="mr-2"> <span class="text-sm">Sangat Kurang (1)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">4. Bagaimana penilaian Anda terhadap kejelasan informasi yang diberikan?</label>
+                <div class="flex space-x-4">
+                  <label class="flex items-center">
+                    <input type="radio" name="kejelasan_informasi" value="5" class="mr-2"> <span class="text-sm">Sangat Jelas (5)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kejelasan_informasi" value="4" class="mr-2"> <span class="text-sm">Jelas (4)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kejelasan_informasi" value="3" class="mr-2"> <span class="text-sm">Cukup Jelas (3)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kejelasan_informasi" value="2" class="mr-2"> <span class="text-sm">Kurang Jelas (2)</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="kejelasan_informasi" value="1" class="mr-2"> <span class="text-sm">Tidak Jelas (1)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saran dan Masukan -->
+          <div class="border-b border-gray-200 pb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">C. Saran dan Masukan</h2>
+
+            <div class="space-y-4">
+              <div>
+                <label for="aspek_peningkatan" class="block text-sm font-medium text-gray-700 mb-2">Aspek yang perlu ditingkatkan:</label>
+                <textarea id="aspek_peningkatan" name="aspek_peningkatan" rows="3"
+                         placeholder="Sebutkan aspek-aspek yang menurut Anda perlu ditingkatkan..."
+                         class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+              </div>
+
+              <div>
+                <label for="saran_lainnya" class="block text-sm font-medium text-gray-700 mb-2">Saran lainnya:</label>
+                <textarea id="saran_lainnya" name="saran_lainnya" rows="3"
+                         placeholder="Berikan saran atau masukan lainnya untuk peningkatan layanan PPID..."
+                         class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kesediaan -->
+          <div class="border-b border-gray-200 pb-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">D. Kesediaan untuk Diwawancarai</h2>
+
+            <div class="space-y-2">
+              <label class="flex items-center">
+                <input type="radio" name="kesediaan_wawancara" value="ya" class="mr-2">
+                <span class="text-sm text-gray-700">Ya, saya bersedia diwawancarai untuk mendapatkan informasi lebih detail</span>
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="kesediaan_wawancara" value="tidak" class="mr-2">
+                <span class="text-sm text-gray-700">Tidak, saya tidak bersedia diwawancarai</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex justify-between pt-6">
+            <button type="reset"
+                    class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-md transition-colors duration-200">
+              Reset Form
+            </button>
+            <button type="submit"
+                    class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-md transition-colors duration-200">
+              Kirim Survei
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-8 bg-green-50 border border-green-200 rounded-lg p-6">
+        <h3 class="text-lg font-bold text-green-800 mb-3">Terima Kasih:</h3>
+        <p class="text-green-700 text-sm">
+          Terima kasih atas waktu dan partisipasi Anda dalam survei ini. Pendapat Anda sangat berharga
+          untuk membantu kami meningkatkan kualitas pelayanan PPID SMKN 14 Jakarta.
+        </p>
+      </div>
+    </div>
+  </div>
+</PageLayout>

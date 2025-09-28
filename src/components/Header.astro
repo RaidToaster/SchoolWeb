@@ -4,15 +4,21 @@ import {
   Menu,
   X,
   ChevronDown,
-  GraduationCap,
-  Users,
-  Calendar,
-  BookOpen,
   Home,
-  Medal,
-  Book,
-  Images,
+  Users,
+  Newspaper,
+  FileText,
+  Shield,
+  BookOpen,
+  Calendar,
+  Download,
+  HelpCircle,
   Phone,
+  UserCheck,
+  ClipboardList,
+  Building,
+  Award,
+  Settings,
 } from "lucide-astro";
 import logo from "@assets/logo/LogoSMKN14.png";
 
@@ -24,59 +30,105 @@ const links = [
     hasDropdown: false,
   },
   {
-    name: "Tentang Kami",
-    href: "/tentang",
+    name: "Profil",
+    href: "/profil",
     icon: Users,
-    hasDropdown: false,
+    hasDropdown: true,
     dropdown: [
-      { name: "Sejarah Sekolah", href: "/tentang/sejarah" },
-      { name: "Visi & Misi", href: "/tentang/visi-misi" },
-      { name: "Struktur Organisasi", href: "/tentang/struktur" },
+      { name: "Profil Singkat", href: "/profil" },
+      { name: "Sambutan Penanggung Jawab", href: "/profil/sambutan" },
+      { name: "Visi & Misi", href: "/profil/visi-misi" },
+      { name: "Maklumat", href: "/profil/maklumat" },
+      { name: "Struktur Organisasi PPID & SK", href: "/profil/struktur" },
+      { name: "Tugas dan Fungsi", href: "/profil/tugas-dan-fungsi" },
+      { name: "Pejabat Struktural", href: "/profil/pejabat-struktural" },
     ],
   },
   {
-    name: "Penerimaan",
-    href: "/penerimaan",
-    icon: GraduationCap,
-    hasDropdown: false,
-  },
-  {
-    name: "Akademik",
-    href: "/akademik",
-    icon: BookOpen,
-    hasDropdown: false,
-    dropdown: [
-      { name: "Program Keahlian", href: "/akademik/program" },
-      { name: "Kurikulum", href: "/akademik/kurikulum" },
-      { name: "Jadwal Pelajaran", href: "/akademik/jadwal" },
-    ],
-  },
-  {
-    name: "Berita & Acara",
+    name: "Berita",
     href: "/berita",
+    icon: Newspaper,
+    hasDropdown: false,
+  },
+  {
+    name: "Standar Layanan",
+    href: "/standar-layanan",
+    icon: UserCheck,
+    hasDropdown: true,
+    dropdown: [
+      { name: "Prosedur Permohonan Informasi", href: "/standar-layanan/prosedur-permohonan-informasi" },
+      { name: "Standar Operasional Prosedur (SOP)", href: "/standar-layanan/standar-operasional-prosedur" },
+      { name: "Mekanisme Permohonan Informasi", href: "/standar-layanan/mekanisme-permohonan-informasi" },
+      { name: "Mekanisme Pengajuan Permohonan Penyelesaian Sengketa", href: "/standar-layanan/mekanisme-penyelesaian-sengketa" },
+      { name: "Mekanisme Pengajuan Keberatan", href: "/standar-layanan/mekanisme-pengajuan-keberatan" },
+    ],
+  },
+  {
+    name: "Regulasi",
+    href: "/regulasi",
+    icon: FileText,
+    hasDropdown: true,
+    dropdown: [
+      { name: "Peraturan Gubernur", href: "/regulasi/peraturan-gubernur" },
+      { name: "Peraturan Daerah", href: "/regulasi/peraturan-daerah" },
+      { name: "Instruksi Gubernur", href: "/regulasi/instruksi-gubernur" },
+      { name: "Surat Edaran", href: "/regulasi/surat-edaran" },
+      { name: "Rancangan Peraturan", href: "/regulasi/rancangan-peraturan" },
+      { name: "Produk Hukum", href: "/regulasi/produk-hukum" },
+    ],
+  },
+  {
+    name: "PPID",
+    href: "/ppid",
+    icon: Shield,
+    hasDropdown: true,
+    dropdown: [
+      { name: "Daftar Informasi Publik", href: "/ppid/daftar-informasi-publik" },
+      { name: "Laporan PPID", href: "/ppid/laporan-ppid" },
+      { name: "Form Permohonan Informasi", href: "/ppid/form-permohonan-informasi" },
+      { name: "Form Keberatan Informasi Publik", href: "/ppid/form-keberatan-informasi" },
+      { name: "Form Survei Kepuasan", href: "/ppid/form-survei-kepuasan" },
+      { name: "Form Pengaduan", href: "/ppid/form-pengaduan" },
+    ],
+  },
+  {
+    name: "Pedoman",
+    href: "/pedoman",
+    icon: BookOpen,
+    hasDropdown: true,
+    dropdown: [
+      { name: "Pedoman Pengelolaan Organisasi", href: "/pedoman/pedoman-pengelolaan-organisasi" },
+      { name: "Pedoman Pengelolaan Administrasi", href: "/pedoman/pedoman-pengelolaan-administrasi" },
+      { name: "Pedoman Pengelolaan Kepegawaian", href: "/pedoman/pedoman-pengelolaan-kepegawaian" },
+      { name: "Pedoman Pengelolaan Keuangan", href: "/pedoman/pedoman-pengelolaan-keuangan" },
+    ],
+  },
+  {
+    name: "Agenda",
+    href: "/agenda",
     icon: Calendar,
     hasDropdown: false,
   },
   {
-    name: "Staf & Guru",
-    href: "/staf",
-    icon: Medal,
+    name: "Pengumuman",
+    href: "/pengumuman",
+    icon: ClipboardList,
     hasDropdown: false,
   },
   {
-    name: "Kehidupan Siswa",
-    href: "/kegiatan-siswa",
-    icon: Book,
+    name: "Download",
+    href: "/download",
+    icon: Download,
     hasDropdown: false,
   },
   {
-    name: "Galeri",
-    href: "/galeri",
-    icon: Images,
+    name: "FAQ",
+    href: "/faq",
+    icon: HelpCircle,
     hasDropdown: false,
   },
   {
-    name: "Kontak",
+    name: "Hubungi",
     href: "/kontak",
     icon: Phone,
     hasDropdown: false,
@@ -94,7 +146,7 @@ const links = [
             <div class="absolute inset-0 bg-white/20 rounded-full blur-xl group-hover:bg-white/30 transition-all duration-300"></div>
             <Image
               src={logo}
-              alt="Logo SMKN 14 Jakarta"
+              alt="Logo PPID SMKN 14 Jakarta"
               width={56}
               height={56}
               format="webp"
@@ -103,8 +155,8 @@ const links = [
             />
           </div>
           <div class="ml-4">
-            <span class="text-2xl font-bold text-white tracking-tight">SMKN 14</span>
-            <div class="text-sm text-blue-100 font-medium tracking-wide">Jakarta</div>
+            <span class="text-2xl font-bold text-white tracking-tight">PPID</span>
+            <div class="text-sm text-blue-100 font-medium tracking-wide">SMKN 14 Jakarta</div>
           </div>
         </a>
       </div>
@@ -132,17 +184,19 @@ const links = [
 
             <!-- Desktop Dropdown Menu -->
             {link.hasDropdown && link.dropdown && (
-              <div class="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                <div class="py-3">
+              <div class="absolute top-full left-0 mt-1 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
+                <div class="py-2">
                   {link.dropdown.map((dropdownItem) => (
                     <a
                       href={dropdownItem.href}
-                      class="block px-6 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 border-l-4 border-transparent hover:border-primary"
+                      class="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 border-l-4 border-transparent hover:border-primary first:rounded-t-xl last:rounded-b-xl"
                     >
                       {dropdownItem.name}
                     </a>
                   ))}
                 </div>
+                <!-- Invisible hover bridge to prevent dropdown disappearing -->
+                <div class="absolute -top-2 left-0 right-0 h-3 bg-transparent -z-10"></div>
               </div>
             )}
           </div>
@@ -191,7 +245,7 @@ const links = [
             </a>
 
             <!-- Mobile Dropdown -->
-            {/* {link.hasDropdown && link.dropdown && (
+            {link.hasDropdown && link.dropdown && (
               <div class="ml-8 mt-2 space-y-1 max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-300">
                 {link.dropdown.map((dropdownItem, dropdownIndex) => (
                   <a
@@ -203,7 +257,7 @@ const links = [
                   </a>
                 ))}
               </div>
-            )} */}
+            )}
           </div>
         </div>
       ))}

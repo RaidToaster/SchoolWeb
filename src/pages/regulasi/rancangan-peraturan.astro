@@ -1,0 +1,70 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+
+const rancanganPeraturan = [
+  {
+    no: 1,
+    nama: "Raperda 2023 tentang Rencana Pembangunan Jangka Menengah Daerah",
+    tahun: "2023"
+  },
+  {
+    no: 2,
+    nama: "Rancangan Peraturan Daerah tentang Pengelolaan Sampah",
+    tahun: "2024"
+  },
+  {
+    no: 3,
+    nama: "Raperda 2024 tentang Perlindungan dan Pemberdayaan UMKM",
+    tahun: "2024"
+  },
+  {
+    no: 4,
+    nama: "Rancangan Peraturan tentang Transportasi Publik",
+    tahun: "2025"
+  },
+  {
+    no: 5,
+    nama: "Raperda 2025 tentang Pengembangan Pariwisata Lokal",
+    tahun: "2025"
+  }
+];
+---
+
+<PageLayout title="Rancangan Peraturan - PPID SMKN 14 Jakarta">
+  <div class="container mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-gray-800 mb-8">Rancangan Peraturan</h1>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">No.</th>
+                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Nama Rancangan Peraturan</th>
+                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Download</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              {rancanganPeraturan.map((item) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                  <td class="px-6 py-4 text-center">
+                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                      📥 Download
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 mb-4">Data regulasi akan terus diperbarui. Untuk informasi lebih lanjut, silakan hubungi admin.</p>
+      </div>
+    </div>
+  </div>
+</PageLayout>
