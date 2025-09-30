@@ -1,256 +1,200 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import { FileText } from "lucide-astro";
 ---
 
 <PageLayout title="Maklumat - PPID SMKN 14 Jakarta">
     <div class="container mx-auto px-6 py-12">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl font-bold text-gray-800 mb-8">
-                Maklumat PPID SMKN 14 Jakarta
-            </h1>
-
-            <div class="prose prose-lg max-w-none">
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
-                    <h2 class="text-2xl font-bold text-blue-800 mb-4">
-                        Informasi Umum
-                    </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Pejabat Pengelola Informasi dan Dokumentasi (PPID) SMKN
-                        14 Jakarta berkomitmen untuk memberikan pelayanan
-                        informasi publik yang prima sesuai dengan Undang-Undang
-                        Nomor 14 Tahun 2008 tentang Keterbukaan Informasi
-                        Publik.
-                    </p>
+        <div class="max-w-6xl mx-auto">
+            <!-- Hero Section -->
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 mb-12 text-white">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="bg-white bg-opacity-20 rounded-full p-4 mr-4">
+                        <FileText class="w-12 h-12 text-white" />
+                    </div>
+                    <h1 class="text-4xl font-bold">
+                        Maklumat PPID SMKN 14 Jakarta
+                    </h1>
                 </div>
+                <p class="text-blue-100 text-lg text-center max-w-3xl mx-auto">
+                    Komitmen kami untuk mewujudkan keterbukaan informasi publik yang transparan, akuntabel, dan mudah diakses oleh seluruh masyarakat
+                </p>
+            </div>
 
-                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">
-                    Identitas PPID
-                </h2>
-                <div class="bg-gray-50 rounded-lg p-6 mb-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
-                            >
-                                Nama Instansi
-                            </h3>
-                            <p class="text-gray-600">SMK Negeri 14 Jakarta</p>
+            <div class="grid gap-8">
+                <!-- Dasar Hukum Section -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-500 rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
                         </div>
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
-                            >
-                                Alamat
-                            </h3>
-                            <p class="text-gray-600">
-                                Jl. Percetakan Negara IIA No.2, Johar Baru,
-                                Jakarta Pusat
-                            </p>
+                        <h2 class="text-3xl font-bold text-blue-800">Dasar Hukum</h2>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        PPID SMKN 14 Jakarta beroperasi berdasarkan sejumlah aturan dan regulasi yang menjadi landasan dalam menjalankan tugas dan fungsinya.
+                    </p>
+                    <div class="grid md:grid-cols-1 gap-4">
+                        <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-400">
+                            <h3 class="font-semibold text-blue-800 mb-2">Undang-Undang Nomor 14 Tahun 2008</h3>
+                            <p class="text-gray-600">Mengatur tentang hak masyarakat untuk mendapatkan informasi serta kewajiban badan publik dalam menyediakan informasi.</p>
                         </div>
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
-                            >
-                                Telepon
-                            </h3>
-                            <p class="text-gray-600">(021) 3456789</p>
+                        <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-400">
+                            <h3 class="font-semibold text-blue-800 mb-2">Peraturan Pemerintah Nomor 61 Tahun 2010</h3>
+                            <p class="text-gray-600">Memberikan pedoman tentang bagaimana informasi publik harus dikelola dan disampaikan.</p>
                         </div>
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
-                            >
-                                Email
-                            </h3>
-                            <p class="text-gray-600">
-                                ppid@smkn14-jakarta.sch.id
-                            </p>
-                        </div>
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
-                            >
-                                Website
-                            </h3>
-                            <p class="text-gray-600">
-                                www.smkn14-jakarta.sch.id
-                            </p>
-                        </div>
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
-                            >
-                                Fax
-                            </h3>
-                            <p class="text-gray-600">(021) 3456790</p>
+                        <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-400">
+                            <h3 class="font-semibold text-blue-800 mb-2">Peraturan Menteri Pendidikan dan Kebudayaan Nomor 23 Tahun 2013</h3>
+                            <p class="text-gray-600">Mengatur tentang pengelolaan informasi dalam lingkup pendidikan dan lembaga sekolah.</p>
                         </div>
                     </div>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">
-                    Jadwal Layanan
-                </h2>
-                <div
-                    class="bg-white border border-gray-200 rounded-lg p-6 mb-6"
-                >
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-3"
-                            >
-                                Hari Kerja
-                            </h3>
-                            <ul
-                                class="list-disc list-inside text-gray-600 space-y-1"
-                            >
-                                <li>Senin - Kamis: 07.30 - 16.00 WIB</li>
-                                <li>Jumat: 07.30 - 16.30 WIB</li>
-                                <li>Sabtu: 07.30 - 13.30 WIB</li>
+                <!-- Tujuan Maklumat Section -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-green-500">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-500 rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-green-800">Tujuan Maklumat</h2>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Maklumat ini disusun dengan tujuan untuk:
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-green-50 rounded-lg p-6 text-center">
+                            <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-green-800 mb-2">Komitmen</h3>
+                            <p class="text-gray-600 text-sm">Menegaskan komitmen PPID dalam melaksanakan keterbukaan informasi</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-6 text-center">
+                            <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-green-800 mb-2">Pemahaman</h3>
+                            <p class="text-gray-600 text-sm">Meningkatkan pemahaman masyarakat tentang hak dan cara mendapatkan informasi</p>
+                        </div>
+                        <div class="bg-green-50 rounded-lg p-6 text-center">
+                            <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-semibold text-green-800 mb-2">Kepercayaan</h3>
+                            <p class="text-gray-600 text-sm">Memperkuat kepercayaan masyarakat terhadap pengelolaan informasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hak dan Kewajiban Section -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="border-l-4 border-purple-500 pl-6">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-purple-500 rounded-full p-2 mr-3">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-purple-800">Hak Masyarakat</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Memperoleh informasi publik yang akurat, benar, dan tidak menyesatkan
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Mengajukan permohonan informasi kepada PPID SMKN 14 Jakarta
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Mendapatkan penjelasan tentang alasan penolakan jika permohonan informasi tidak dapat dipenuhi
+                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <h3
-                                class="text-lg font-semibold text-gray-800 mb-3"
-                            >
-                                Istirahat
-                            </h3>
-                            <ul
-                                class="list-disc list-inside text-gray-600 space-y-1"
-                            >
-                                <li>Senin - Kamis: 12.00 - 13.00 WIB</li>
-                                <li>Jumat: 11.30 - 13.00 WIB</li>
+                        <div class="border-l-4 border-orange-500 pl-6">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-orange-500 rounded-full p-2 mr-3">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-orange-800">Kewajiban Masyarakat</h3>
+                            </div>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-orange-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Menggunakan informasi yang diperoleh dengan cara yang bertanggung jawab
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 text-orange-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Menghormati ketentuan dan prosedur yang telah ditetapkan dalam permintaan informasi
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">
-                    Mekanisme Permohonan Informasi
-                </h2>
-                <div class="bg-green-50 rounded-lg p-6 mb-6">
-                    <ol
-                        class="list-decimal list-inside text-gray-700 space-y-3"
-                    >
-                        <li>
-                            <strong>Pengajuan Permohonan:</strong> Pemohon mengisi
-                            formulir permohonan informasi yang disediakan PPID
-                        </li>
-                        <li>
-                            <strong>Verifikasi:</strong> PPID memverifikasi kelengkapan
-                            dan kejelasan permohonan
-                        </li>
-                        <li>
-                            <strong>Penelitian:</strong> PPID meneliti informasi
-                            yang dimohonkan
-                        </li>
-                        <li>
-                            <strong>Penyediaan:</strong> PPID menyediakan informasi
-                            sesuai dengan ketentuan yang berlaku
-                        </li>
-                        <li>
-                            <strong>Penyerahan:</strong> Informasi diserahkan kepada
-                            pemohon dengan tanda terima
-                        </li>
-                    </ol>
-                </div>
-
-                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">
-                    Biaya Layanan
-                </h2>
-                <div
-                    class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 mb-6"
-                >
-                    <p class="text-gray-700 mb-4">
-                        Sesuai dengan Peraturan Komisi Informasi Nomor 1 Tahun
-                        2010, biaya layanan informasi publik ditetapkan sebagai
-                        berikut:
+                <!-- Prosedur Section -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-l-4 border-indigo-500">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-500 rounded-full p-3 mr-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-3xl font-bold text-indigo-800">Prosedur Permohonan Informasi</h2>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-8">
+                        Untuk mempermudah akses informasi, berikut adalah prosedur permohonan informasi di PPID SMKN 14 Jakarta:
                     </p>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Biaya penggandaan fotokopi: Rp 300,- per lembar</li>
-                        <li>Biaya pengiriman melalui pos: sesuai tarif pos</li>
-                        <li>
-                            Biaya perekaman informasi: Rp 5.000,- per kaset/CD
-                        </li>
-                        <li>
-                            Pembebasan biaya untuk permohonan informasi maksimal
-                            50 halaman
-                        </li>
-                    </ul>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-indigo-50 rounded-lg p-6 text-center relative">
+                            <div class="bg-indigo-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg">1</div>
+                            <h3 class="font-semibold text-indigo-800 mb-2">Pengajuan</h3>
+                            <p class="text-gray-600 text-sm">Masyarakat dapat mengajukan permohonan informasi secara tertulis atau melalui media elektronik yang disediakan</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-6 text-center relative">
+                            <div class="bg-indigo-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg">2</div>
+                            <h3 class="font-semibold text-indigo-800 mb-2">Verifikasi</h3>
+                            <p class="text-gray-600 text-sm">PPID akan memverifikasi dan memproses permohonan informasi sesuai dengan ketentuan yang berlaku</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-6 text-center relative">
+                            <div class="bg-indigo-500 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg">3</div>
+                            <h3 class="font-semibold text-indigo-800 mb-2">Pemberian</h3>
+                            <p class="text-gray-600 text-sm">Informasi akan diberikan kepada pemohon sesuai dengan waktu yang ditentukan</p>
+                        </div>
+                    </div>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">
-                    Standar Pelayanan
-                </h2>
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <div class="grid md:grid-cols-3 gap-6 text-center">
-                        <div class="p-4">
-                            <div
-                                class="bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
-                            >
-                                <svg
-                                    class="w-8 h-8 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">
-                                10 Hari Kerja
-                            </h3>
-                            <p class="text-gray-600">Waktu respon maksimal</p>
-                        </div>
-                        <div class="p-4">
-                            <div
-                                class="bg-green-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
-                            >
-                                <svg
-                                    class="w-8 h-8 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">
-                                100% Akurat
-                            </h3>
-                            <p class="text-gray-600">Keakuratan informasi</p>
-                        </div>
-                        <div class="p-4">
-                            <div
-                                class="bg-purple-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4"
-                            >
-                                <svg
-                                    class="w-8 h-8 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-800 mb-2">
-                                Profesional
-                            </h3>
-                            <p class="text-gray-600">Pelayanan berkualitas</p>
-                        </div>
+                <!-- Closing Statement -->
+                <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-8 text-center border border-gray-200">
+                    <div class="max-w-3xl mx-auto">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Komitmen Kami</h3>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Kami berharap maklumat ini dapat menjadi panduan yang jelas dan bermanfaat bagi masyarakat dalam mengakses informasi dari SMKN 14 Jakarta. Melalui keterbukaan informasi, kita dapat menciptakan lingkungan pendidikan yang lebih baik dan transparan.
+                        </p>
                     </div>
                 </div>
             </div>

@@ -4,28 +4,21 @@ import PageLayout from "../../layouts/PageLayout.astro";
 const peraturanGubernur = [
   {
     no: 1,
-    nama: "Peraturan Gubernur Provinsi DKI Jakarta Pusat Nomor 6 Tahun 2017",
-    tahun: "2017"
+    nama: "PERGUB NOMOR 175 TAHUN 2016 - LAYANAN INFORMASI PUBLIK",
+    tahun: "2016",
+    file: "PERGUB NOMOR 175 TAHUN 2016_LAYANAN INFORMASI PUBLIK.pdf"
   },
   {
     no: 2,
-    nama: "Pergub No. 40 Tahun 2018 Tentang Mekanisme Koordinasi Kerja Pemerintah Daerah",
-    tahun: "2018"
+    nama: "PERGUB NOMOR 40 TAHUN 2024 - Pedoman Pengelolaan Pelayanan Informasi Publik dan Dokumentasi",
+    tahun: "2024",
+    file: "PERGUB NOMOR 40 TAHUN 2024_Pedoman Pengelolaan Pelayanan Informasi Publik dan Dokumentasi.pdf"
   },
   {
     no: 3,
-    nama: "Peraturan Gubernur No. 15 Tahun 2019 Tentang Pedoman Pengelolaan Keuangan Daerah",
-    tahun: "2019"
-  },
-  {
-    no: 4,
-    nama: "Pergub No. 22 Tahun 2020 Tentang Sistem Informasi Pemerintahan Daerah",
-    tahun: "2020"
-  },
-  {
-    no: 5,
-    nama: "Peraturan Gubernur No. 8 Tahun 2021 Tentang Pengembangan Sumber Daya Manusia",
-    tahun: "2021"
+    nama: "PERGUB NOMOR 42 TAHUN 2022 - Jaringan Dokumentasi dan Informasi Hukum Provinsi Daerah Khusus Ibukota Jakarta",
+    tahun: "2022",
+    file: "PERGUB NOMOR 42 TAHUN 2022_Jaringan Dokumentasi dan Informasi Hukum Provinsi Daerah Khusus Ibukota Jakarta.pdf"
   }
 ];
 ---
@@ -51,9 +44,9 @@ const peraturanGubernur = [
                   <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
                   <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
                   <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                    <a href={`/src/assets/peraturan_gubernur/${item.file}`} download={item.file} class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-block">
                       📥 Download
-                    </button>
+                    </a>
                   </td>
                 </tr>
               ))}

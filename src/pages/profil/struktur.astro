@@ -9,48 +9,147 @@ import PageLayout from "../../layouts/PageLayout.astro";
 
       <div class="prose prose-lg max-w-none">
         <p class="text-gray-600 leading-relaxed mb-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Struktur organisasi PPID di SMKN 14 Jakarta dirancang untuk memastikan pengelolaan dan penyampaian informasi berjalan dengan efektif dan efisien. Berikut adalah komponen utama dalam struktur organisasi tersebut:
         </p>
 
         <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Struktur Organisasi</h2>
         <div class="bg-gray-50 rounded-lg p-6 mb-6">
           <div class="text-center">
             <div class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-              <span class="text-xl font-bold">KS</span>
+              <span class="text-xl font-bold">Atasan</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-800">Kepala Sekolah</h3>
-            <p class="text-gray-600">Penanggung Jawab PPID</p>
+            <h3 class="text-lg font-bold text-gray-800">Atasan PPID: Kepala Sekolah</h3>
+            <p class="text-gray-600">Kristari Yuningsih, M.Pd.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-gray-50 rounded-lg p-4 text-center">
+            <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+              <span class="text-lg font-bold">Ketua</span>
+            </div>
+            <h3 class="font-bold text-gray-800">Ketua PPID</h3>
+            <p class="text-gray-600 text-sm">Kepala Tata Usaha</p>
+            <p class="text-gray-600 text-sm">Yendha Putri Wulandari, S.T</p>
+          </div>
+          <div class="bg-gray-50 rounded-lg p-4 text-center">
+            <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+              <span class="text-lg font-bold">Wakil</span>
+            </div>
+            <h3 class="font-bold text-gray-800">Wakil Ketua PPID</h3>
+            <p class="text-gray-600 text-sm">Wakil Bidang Dudi</p>
+            <p class="text-gray-600 text-sm">Yenny Akmalia, M.Pd.</p>
           </div>
         </div>
 
         <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Susunan Keanggotaan</h2>
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          <div class="bg-white border border-gray-200 rounded-lg p-4">
-            <h3 class="font-bold text-gray-800 mb-2">Atasan PPID</h3>
-            <p class="text-gray-600">Kepala Sekolah SMKN 14 Jakarta</p>
-          </div>
-          <div class="bg-white border border-gray-200 rounded-lg p-4">
-            <h3 class="font-bold text-gray-800 mb-2">PPID Utama</h3>
-            <p class="text-gray-600">Wakil Kepala Sekolah Bidang Kesiswaan</p>
-          </div>
-          <div class="bg-white border border-gray-200 rounded-lg p-4">
-            <h3 class="font-bold text-gray-800 mb-2">PPID Pembantu</h3>
-            <p class="text-gray-600">Kepala Tata Usaha</p>
-          </div>
-          <div class="bg-white border border-gray-200 rounded-lg p-4">
-            <h3 class="font-bold text-gray-800 mb-2">Admin PPID</h3>
-            <p class="text-gray-600">Staf TU yang ditunjuk</p>
-          </div>
+        <div class="overflow-x-auto mb-6">
+          <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jabatan</th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <tr>
+                <td class="px-4 py-3 text-sm text-gray-900">1.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Atasan PPID</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Kristari Yuningsih, M.Pd.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 text-sm text-gray-900">2.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Ketua PPID</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Yendha Putri Wulandari, S.T</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-sm text-gray-900">3.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Wakil Ketua PPID</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Yenny Akmalia, M.Pd.</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 text-sm text-gray-900">4.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Sekretaris</td>
+                <td class="px-4 py-3 text-sm text-gray-600">Siti Hana Fajarwati, S.T</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-sm text-gray-900">5.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Tim Pengelola Informasi</td>
+                <td class="px-4 py-3 text-sm text-gray-600">
+                  Sapto Prasetyo, S.Pd.<br>
+                  Feby Heryana, S.Kom<br>
+                  Kurnia Nursyahriati, S.Pd.
+                </td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-4 py-3 text-sm text-gray-900">6.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Petugas Pelayanan Informasi</td>
+                <td class="px-4 py-3 text-sm text-gray-600">
+                  Aulia Octariana, M.Pd.<br>
+                  Andi Rahmadi, M.Pd.<br>
+                  Dra. Nurul Arofah, M.A<br>
+                  Suhandri Sumabrata, S.Pd.<br>
+                  Fatmawati, S.Pd.
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-sm text-gray-900">7.</td>
+                <td class="px-4 py-3 text-sm font-medium text-gray-900">Tim Penyelesaian Sengketa Informasi</td>
+                <td class="px-4 py-3 text-sm text-gray-600">
+                  Susi Helmilia, S.Pd.<br>
+                  Muhammad Kawiyu, S.Pd.<br>
+                  Firmanto, S.Pd.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
         <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Tugas dan Tanggung Jawab</h2>
-        <ul class="list-disc list-inside text-gray-600 mb-6 space-y-2">
-          <li>Menyusun dan menetapkan kebijakan pengelolaan informasi publik</li>
-          <li>Mengkoordinasikan penyediaan informasi publik</li>
-          <li>Mengawasi pelaksanaan pelayanan informasi publik</li>
-          <li>Menindaklanjuti permohonan informasi yang tidak ditanggapi</li>
-          <li>Menyelesaikan sengketa informasi publik</li>
-        </ul>
+
+        <div class="mb-6">
+          <div class="bg-blue-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-blue-800 mb-2">Atasan PPID : Kepala Sekolah</h3>
+            <p class="text-gray-700">Bertanggung jawab atas semua kegiatan pengelolaan dan pelayanan informasi publik di SMKN 14 Jakarta.</p>
+          </div>
+
+          <div class="bg-green-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-green-800 mb-2">Ketua PPID : Kepala Tata Usaha</h3>
+            <p class="text-gray-700">PPID Utama memimpin dan mengkoordinasikan seluruh fungsi yang terkait dengan pengelolaan informasi publik di sekolah.</p>
+          </div>
+
+          <div class="bg-green-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-green-800 mb-2">Wakil Ketua PPID : Wakil Bidang Dudi</h3>
+            <p class="text-gray-700">Berkoordinasi dengan ketua terkait atas semua kegiatan pengelolaan dan pelayanan informasi.</p>
+          </div>
+
+          <div class="bg-yellow-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-yellow-800 mb-2">Sekretaris</h3>
+            <p class="text-gray-700">Membantu dalam penyusunan dan pendokumentasian informasi. Memastikan bahwa semua data dan informasi yang terkait dengan aktivitas dan kebijakan sekolah terdokumentasi dengan baik dan siap untuk diakses oleh publik.</p>
+          </div>
+
+          <div class="bg-purple-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-purple-800 mb-2">Tim Pengelola Informasi : Staf TU, Operator Sekolah, Tim Dokumentasi</h3>
+            <p class="text-gray-700">Membantu dalam penyusunan dan pendokumentasian informasi. Memastikan bahwa semua data dan informasi yang terkait dengan aktivitas dan kebijakan sekolah terdokumentasi dengan baik dan siap untuk diakses oleh publik.</p>
+          </div>
+
+          <div class="bg-red-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-red-800 mb-2">Petugas Pelayanan Informasi</h3>
+            <p class="text-gray-700">Ditugaskan untuk melayani pemohon informasi. Bertugas untuk melayani permohonan informasi dari masyarakat dan memberikan bantuan serta penjelasan jika diperlukan. Memastikan bahwa setiap permohonan informasi diproses dengan cepat dan tepat.</p>
+          </div>
+
+          <div class="bg-indigo-50 rounded-lg p-4 mb-4">
+            <h3 class="font-bold text-indigo-800 mb-2">Tim Penyelesaian Sengketa Informasi</h3>
+            <p class="text-gray-700">Ditugaskan untuk menyelesaikan sengketa informasi. Menangani sengketa informasi yang mungkin timbul antara sekolah dan pihak pemohon informasi. Berperan dalam menyelesaikan permasalahan terkait akses informasi dengan cara yang adil dan transparan.</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <p class="text-gray-700 leading-relaxed">
+            Struktur ini diharapkan dapat mendukung keterbukaan informasi dan menjamin bahwa setiap informasi yang dibutuhkan oleh masyarakat dapat diakses dengan mudah dan akurat. Dengan adanya struktur organisasi yang jelas, PPID SMKN 14 Jakarta dapat menjalankan perannya dengan lebih efektif dalam mendukung visi dan misi sekolah.
+          </p>
+        </div>
       </div>
     </div>
   </div>
