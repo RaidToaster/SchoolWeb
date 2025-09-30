@@ -1,48 +1,201 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const daftarInformasi = [
+// Data untuk Informasi Berkala
+const informasiBerkala = [
   {
     no: 1,
-    kategori: "Profil Sekolah",
-    nama: "Visi, Misi, dan Tujuan Sekolah",
-    deskripsi: "Informasi tentang visi, misi, dan tujuan SMKN 14 Jakarta",
-    tahun: "2024"
+    nama: "Alamat Sekolah",
+    fileName: "1. ALAMAT SEKOLAH_COVER WEB.docx",
+    deskripsi: "Informasi alamat lengkap SMKN 14 Jakarta",
+    kategori: "Profil Sekolah"
   },
   {
     no: 2,
-    kategori: "Profil Sekolah",
-    nama: "Struktur Organisasi",
-    deskripsi: "Struktur organisasi dan pejabat struktural di SMKN 14 Jakarta",
-    tahun: "2024"
+    nama: "Daftar Informasi Publik",
+    fileName: "2. DAFTAR INFORMASI PUBLIK.docx",
+    deskripsi: "Daftar informasi publik yang tersedia di SMKN 14 Jakarta",
+    kategori: "Informasi Publik"
   },
   {
     no: 3,
-    kategori: "Akademik",
-    nama: "Kurikulum dan Pembelajaran",
-    deskripsi: "Informasi kurikulum, silabus, dan program pembelajaran",
-    tahun: "2024"
+    nama: "Daftar Informasi Publik yang Dimutakhirkan",
+    fileName: "3. DAFTAR INFORMASI PUBLIK YANG DIMUTAKHIRKAN.docx",
+    deskripsi: "Daftar informasi publik yang telah dimutakhirkan",
+    kategori: "Informasi Publik"
   },
   {
     no: 4,
-    kategori: "Akademik",
-    nama: "Kalender Akademik",
-    deskripsi: "Jadwal kegiatan akademik tahun pelajaran 2024/2025",
-    tahun: "2024"
+    nama: "Jangka Waktu Permohonan Informasi Publik",
+    fileName: "4. JANGKA WAKTU PERMOHONAN INFORMASI PUBLIK.docx",
+    deskripsi: "Informasi mengenai jangka waktu permohonan informasi publik",
+    kategori: "Prosedur"
   },
   {
     no: 5,
-    kategori: "Keuangan",
-    nama: "Laporan Keuangan",
-    deskripsi: "Laporan realisasi anggaran tahun 2023",
-    tahun: "2023"
+    nama: "Maklumat Pelayanan Informasi Publik",
+    fileName: "5. MAKLUMAT PELAYANAN INFORMASI PUBLIK.docx",
+    deskripsi: "Maklumat pelayanan informasi publik SMKN 14 Jakarta",
+    kategori: "Pelayanan"
   },
   {
     no: 6,
-    kategori: "Keuangan",
-    nama: "Rencana Anggaran",
-    deskripsi: "Rencana anggaran pendapatan dan belanja tahun 2024",
-    tahun: "2024"
+    nama: "Pengadaan Barang dan Jasa",
+    fileName: "6. PENGADAAN BARANG DAN JASA.docx",
+    deskripsi: "Informasi pengadaan barang dan jasa di SMKN 14 Jakarta",
+    kategori: "Pengadaan"
+  },
+  {
+    no: 7,
+    nama: "Profil Singkat Pejabat Struktural",
+    fileName: "7. PROFIL SINGKAT PEJABAT STRUKTURAL.xlsx",
+    deskripsi: "Profil singkat pejabat struktural SMKN 14 Jakarta",
+    kategori: "Profil Sekolah"
+  },
+  {
+    no: 8,
+    nama: "Ringkasan LPI 2024",
+    fileName: "8. RINGKASAN LPI 2024.xlsx",
+    deskripsi: "Ringkasan Laporan Penyediaan Informasi 2024",
+    kategori: "Laporan"
+  },
+  {
+    no: 9,
+    nama: "Ringkasan LPI 2025",
+    fileName: "9. RINGKASAN LPI 2025.xlsx",
+    deskripsi: "Ringkasan Laporan Penyediaan Informasi 2025",
+    kategori: "Laporan"
+  },
+  {
+    no: 10,
+    nama: "Struktur Organisasi",
+    fileName: "10. STRUKTUR ORGANISASI.xlsx",
+    deskripsi: "Struktur organisasi SMKN 14 Jakarta",
+    kategori: "Profil Sekolah"
+  },
+  {
+    no: 11,
+    nama: "Uraian Tugas",
+    fileName: "11. Uraian Tugas.docx",
+    deskripsi: "Uraian tugas pejabat struktural SMKN 14 Jakarta",
+    kategori: "Profil Sekolah"
+  },
+  {
+    no: 12,
+    nama: "Tata Cara Pengaduan Penyalahgunaan Wewenang",
+    fileName: "12. TATA CARA PENGADUAN PENYALAHGUNAAN WEWENANG ATAU.docx",
+    deskripsi: "Tata cara pengaduan penyalahgunaan wewenang atau maladministrasi",
+    kategori: "Prosedur"
+  }
+];
+
+// Data untuk Informasi Sedia Setiap Saat
+const informasiSediaSetiapSaat = [
+  {
+    no: 1,
+    nama: "Data Statistik Murid Baru Tahun 2025-2026",
+    fileName: "DATA STATISTIK MURID BARU TAHUN 2025-2026.pdf",
+    deskripsi: "Data statistik penerimaan murid baru tahun ajaran 2025-2026",
+    kategori: "Statistik"
+  },
+  {
+    no: 2,
+    nama: "Data Statistik Murid Bulan Agustus 2025",
+    fileName: "DATA STATISTIK MURID BULAN AGUSTUS 2025.pdf",
+    deskripsi: "Data statistik murid bulan Agustus 2025",
+    kategori: "Statistik"
+  },
+  {
+    no: 3,
+    nama: "Data Statistik Murid Bulan Juli 2025",
+    fileName: "DATA STATISTIK MURID BULAN JULI 2025.pdf",
+    deskripsi: "Data statistik murid bulan Juli 2025",
+    kategori: "Statistik"
+  },
+  {
+    no: 4,
+    nama: "Data Statistik Murid Bulan September 2025",
+    fileName: "DATA STATISTIK MURID BULAN SEPTEMBER 2025.pdf",
+    deskripsi: "Data statistik murid bulan September 2025",
+    kategori: "Statistik"
+  },
+  {
+    no: 5,
+    nama: "Data Statistik Guru Pegawai",
+    fileName: "DATA-STATISTIK-GURU-PEGAWAI.pdf",
+    deskripsi: "Data statistik guru dan pegawai SMKN 14 Jakarta",
+    kategori: "Statistik"
+  },
+  {
+    no: 6,
+    nama: "KSP SMK Negeri 14 Jakarta 2024",
+    fileName: "KSP SMK Negeri 14 Jakarta 2024.pdf",
+    deskripsi: "Kertas Kerja Sekolah tahun 2024",
+    kategori: "Perencanaan"
+  },
+  {
+    no: 7,
+    nama: "KSP SMK Negeri 14 Jakarta 2025",
+    fileName: "KSP SMK Negeri 14 Jakarta 2025.pdf",
+    deskripsi: "Kertas Kerja Sekolah tahun 2025",
+    kategori: "Perencanaan"
+  },
+  {
+    no: 8,
+    nama: "Peraturan, Keputusan yang Dihasilkan Badan Publik",
+    fileName: "Peraturan, Keputusan yang di hasilkan Badan Publik.pdf",
+    deskripsi: "Kumpulan peraturan dan keputusan yang dihasilkan badan publik",
+    kategori: "Produk Hukum"
+  },
+  {
+    no: 9,
+    nama: "RENSTRA SMKN 14 JKT REV 28",
+    fileName: "RENSTRA SMKN 14 JKT REV 28.pdf",
+    deskripsi: "Rencana Strategis SMKN 14 Jakarta Revisi 28",
+    kategori: "Perencanaan"
+  },
+  {
+    no: 10,
+    nama: "Surat Surat Badan Publik",
+    fileName: "SURAT SURAT BADAN PUBLIK.pdf",
+    deskripsi: "Kumpulan surat-surat resmi badan publik",
+    kategori: "Administrasi"
+  },
+  {
+    no: 11,
+    nama: "Uraian Tugas dan Fungsi",
+    fileName: "URAIAN TUGAS DAN FUNGSI.pdf",
+    deskripsi: "Uraian tugas dan fungsi organisasi SMKN 14 Jakarta",
+    kategori: "Profil Sekolah"
+  },
+  {
+    no: 12,
+    nama: "Data Inventaris Barang - KIR 2025",
+    fileName: "DATA INVENTARIS BARANG/KIR 2025.pdf",
+    deskripsi: "Kartu Inventaris Ruangan tahun 2025",
+    kategori: "Inventaris"
+  }
+];
+
+// Data untuk Informasi Serta Merta
+const informasiSertaMerta = [
+  {
+    no: 1,
+    nama: "Prosedur Peringatan Dini dan Prosedur Evakuasi Keadaan Darurat",
+    fileName: "9.-PROSEDUR-PERINGATAN-DINI-DAN-PROSEDUR-EVAKUASI-KEADAAN-DARURAT_SMKN14.pdf",
+    deskripsi: "Prosedur peringatan dini dan evakuasi dalam keadaan darurat",
+    kategori: "Keamanan"
+  }
+];
+
+// Data untuk Informasi Dikecualikan
+const informasiDikecualikan = [
+  {
+    no: 1,
+    nama: "Informasi Dikecualikan",
+    fileName: "Informasi dikecualikan.PNG",
+    deskripsi: "Daftar informasi yang dikecualikan dari publikasi",
+    kategori: "Klasifikasi"
   }
 ];
 ---
@@ -52,34 +205,178 @@ const daftarInformasi = [
     <div class="max-w-6xl mx-auto">
       <h1 class="text-4xl font-bold text-gray-800 mb-8">Daftar Informasi Publik</h1>
 
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full">
-            <thead class="bg-primary text-white">
-              <tr>
-                <th class="px-6 py-4 text-center text-sm font-medium text-primary">No.</th>
-                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Kategori</th>
-                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Nama Informasi</th>
-                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Deskripsi</th>
-                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Download</th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-              {daftarInformasi.map((item) => (
-                <tr class="hover:bg-gray-50">
-                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.kategori}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.deskripsi}</td>
-                  <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                      📥 Download
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <!-- Tab Navigation -->
+      <div class="mb-8">
+        <div class="border-b border-gray-200">
+          <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+            <button id="tab-berkala" class="tab-button active whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary">
+              Informasi Berkala
+            </button>
+            <button id="tab-sedia-saat" class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              Informasi Sedia Setiap Saat
+            </button>
+            <button id="tab-serta-merta" class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              Informasi Serta Merta
+            </button>
+            <button id="tab-dikecualikan" class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+              Informasi Dikecualikan
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Informasi Berkala Tab -->
+        <div id="content-berkala" class="tab-pane active">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-primary">
+              <h2 class="text-xl font-semibold text-white">Informasi Berkala</h2>
+              <p class="text-white mt-1">Informasi yang secara berkala disampaikan kepada publik sesuai jadwal yang telah ditentukan</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Informasi</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Deskripsi</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Download</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {informasiBerkala.map((item) => (
+                    <tr class="hover:bg-gray-50">
+                      <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">{item.nama}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.kategori}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.deskripsi}</td>
+                      <td class="px-6 py-4 text-center">
+                        <a href={`/INFOMASI BERKALA/${item.fileName}`} download class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center">
+                          📥 Download
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informasi Sedia Setiap Saat Tab -->
+        <div id="content-sedia-saat" class="tab-pane hidden">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-green-600">
+              <h2 class="text-xl font-semibold text-white">Informasi Sedia Setiap Saat</h2>
+              <p class="text-green-100 mt-1">Informasi yang tersedia setiap saat dan dapat diakses oleh publik</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Informasi</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Deskripsi</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Download</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {informasiSediaSetiapSaat.map((item) => (
+                    <tr class="hover:bg-gray-50">
+                      <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">{item.nama}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.kategori}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.deskripsi}</td>
+                      <td class="px-6 py-4 text-center">
+                        <a href={`/INFOMASI SEDIA SETIAP SAAT/${item.fileName}`} download class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center">
+                          📥 Download
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informasi Serta Merta Tab -->
+        <div id="content-serta-merta" class="tab-pane hidden">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-orange-600">
+              <h2 class="text-xl font-semibold text-white">Informasi Serta Merta</h2>
+              <p class="text-orange-100 mt-1">Informasi yang harus segera diumumkan karena menyangkut hajat hidup orang banyak</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Informasi</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Deskripsi</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Download</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {informasiSertaMerta.map((item) => (
+                    <tr class="hover:bg-gray-50">
+                      <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">{item.nama}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.kategori}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.deskripsi}</td>
+                      <td class="px-6 py-4 text-center">
+                        <a href={`/INFOMASI SERTA MERTA/${item.fileName}`} download class="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center">
+                          📥 Download
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informasi Dikecualikan Tab -->
+        <div id="content-dikecualikan" class="tab-pane hidden">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-red-600">
+              <h2 class="text-xl font-semibold text-white">Informasi Dikecualikan</h2>
+              <p class="text-red-100 mt-1">Informasi yang dikecualikan dari publikasi berdasarkan ketentuan peraturan perundang-undangan</p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Informasi</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Deskripsi</th>
+                    <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Download</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {informasiDikecualikan.map((item) => (
+                    <tr class="hover:bg-gray-50">
+                      <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                      <td class="px-6 py-4 text-sm font-medium text-gray-900">{item.nama}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.kategori}</td>
+                      <td class="px-6 py-4 text-sm text-gray-500">{item.deskripsi}</td>
+                      <td class="px-6 py-4 text-center">
+                        <a href={`/INFOMASI DIKECUALIKAN/${item.fileName}`} download class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center">
+                          📥 Download
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -88,4 +385,40 @@ const daftarInformasi = [
       </div>
     </div>
   </div>
+
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      tabButtons.forEach((button: Element) => {
+        button.addEventListener('click', (event) => {
+          const target = event.target as HTMLElement;
+          const tabId = target.id.replace('tab-', '');
+
+          // Remove active class from all tabs and panes
+          tabButtons.forEach((btn: Element) => {
+            (btn as HTMLElement).classList.remove('active', 'border-primary', 'text-primary');
+            (btn as HTMLElement).classList.add('border-transparent', 'text-gray-500');
+          });
+
+          tabPanes.forEach((pane: Element) => {
+            (pane as HTMLElement).classList.add('hidden');
+            (pane as HTMLElement).classList.remove('active');
+          });
+
+          // Add active class to clicked tab and corresponding pane
+          target.classList.remove('border-transparent', 'text-gray-500');
+          target.classList.add('active', 'border-primary', 'text-primary');
+
+          const targetPane = document.getElementById(`content-${tabId}`);
+          if (targetPane) {
+            targetPane.classList.remove('hidden');
+            targetPane.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
 </PageLayout>

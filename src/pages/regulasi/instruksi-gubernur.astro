@@ -1,33 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const instruksiGubernur = [
-  {
-    no: 1,
-    nama: "Instruksi Gubernur No. 1 Tahun 2020 tentang Peningkatan Pelayanan Publik",
-    tahun: "2020"
-  },
-  {
-    no: 2,
-    nama: "Ingub No. 3 Tahun 2021 tentang Koordinasi Penanganan COVID-19",
-    tahun: "2021"
-  },
-  {
-    no: 3,
-    nama: "Instruksi Gubernur No. 5 Tahun 2022 tentang Digitalisasi Pemerintahan",
-    tahun: "2022"
-  },
-  {
-    no: 4,
-    nama: "Ingub No. 7 Tahun 2023 tentang Pengembangan UMKM",
-    tahun: "2023"
-  },
-  {
-    no: 5,
-    nama: "Instruksi Gubernur No. 2 Tahun 2024 tentang Adaptasi Perubahan Iklim",
-    tahun: "2024"
-  }
-];
+const instruksiGubernur: Array<{
+  no: number;
+  nama: string;
+  tahun: string;
+}> = [];
 ---
 
 <PageLayout title="Instruksi Gubernur - PPID SMKN 14 Jakarta">
@@ -46,17 +24,25 @@ const instruksiGubernur = [
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-              {instruksiGubernur.map((item) => (
-                <tr class="hover:bg-gray-50">
-                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
-                  <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                      📥 Download
-                    </button>
+              {instruksiGubernur.length > 0 ? (
+                instruksiGubernur.map((item) => (
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                    <td class="px-6 py-4 text-center">
+                      <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                        📥 Download
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colspan="3" class="px-6 py-8 text-center text-gray-500">
+                    Data sedang dipersiapkan. Silakan kembali lagi nanti.
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>

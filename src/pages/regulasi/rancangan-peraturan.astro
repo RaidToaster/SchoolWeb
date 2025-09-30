@@ -1,33 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const rancanganPeraturan = [
-  {
-    no: 1,
-    nama: "Raperda 2023 tentang Rencana Pembangunan Jangka Menengah Daerah",
-    tahun: "2023"
-  },
-  {
-    no: 2,
-    nama: "Rancangan Peraturan Daerah tentang Pengelolaan Sampah",
-    tahun: "2024"
-  },
-  {
-    no: 3,
-    nama: "Raperda 2024 tentang Perlindungan dan Pemberdayaan UMKM",
-    tahun: "2024"
-  },
-  {
-    no: 4,
-    nama: "Rancangan Peraturan tentang Transportasi Publik",
-    tahun: "2025"
-  },
-  {
-    no: 5,
-    nama: "Raperda 2025 tentang Pengembangan Pariwisata Lokal",
-    tahun: "2025"
-  }
-];
+const rancanganPeraturan: Array<{
+  no: number;
+  nama: string;
+  tahun: string;
+}> = [];
 ---
 
 <PageLayout title="Rancangan Peraturan - PPID SMKN 14 Jakarta">
@@ -46,17 +24,25 @@ const rancanganPeraturan = [
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-              {rancanganPeraturan.map((item) => (
-                <tr class="hover:bg-gray-50">
-                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
-                  <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                      📥 Download
-                    </button>
+              {rancanganPeraturan.length > 0 ? (
+                rancanganPeraturan.map((item) => (
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                    <td class="px-6 py-4 text-center">
+                      <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                        📥 Download
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colspan="3" class="px-6 py-8 text-center text-gray-500">
+                    Data sedang dipersiapkan. Silakan kembali lagi nanti.
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>

@@ -1,33 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const peraturanDaerah = [
-  {
-    no: 1,
-    nama: "Peraturan Daerah Provinsi DKI Jakarta Pusat Nomor 1 Tahun 2019 tentang Retribusi Daerah",
-    tahun: "2019"
-  },
-  {
-    no: 2,
-    nama: "Perda No. 5 Tahun 2020 tentang Perlindungan Anak",
-    tahun: "2020"
-  },
-  {
-    no: 3,
-    nama: "Peraturan Daerah No. 8 Tahun 2021 tentang Pengelolaan Lingkungan Hidup",
-    tahun: "2021"
-  },
-  {
-    no: 4,
-    nama: "Perda No. 12 Tahun 2022 tentang Penyelenggaraan Pendidikan",
-    tahun: "2022"
-  },
-  {
-    no: 5,
-    nama: "Peraturan Daerah No. 3 Tahun 2023 tentang Kesehatan Masyarakat",
-    tahun: "2023"
-  }
-];
+const peraturanDaerah: Array<{
+  no: number;
+  nama: string;
+  tahun: string;
+}> = [];
 ---
 
 <PageLayout title="Peraturan Daerah - PPID SMKN 14 Jakarta">
@@ -46,17 +24,25 @@ const peraturanDaerah = [
               </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-              {peraturanDaerah.map((item) => (
-                <tr class="hover:bg-gray-50">
-                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
-                  <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                      📥 Download
-                    </button>
+              {peraturanDaerah.length > 0 ? (
+                peraturanDaerah.map((item) => (
+                  <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
+                    <td class="px-6 py-4 text-center">
+                      <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                        📥 Download
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colspan="3" class="px-6 py-8 text-center text-gray-500">
+                    Data sedang dipersiapkan. Silakan kembali lagi nanti.
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </div>

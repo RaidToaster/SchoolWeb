@@ -2,107 +2,579 @@
 import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<PageLayout title="Agenda - PPID SMKN 14 Jakarta">
+<PageLayout title="Agenda Sekolah - SMKN 14 Jakarta">
   <div class="container mx-auto px-6 py-12">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-4xl font-bold text-gray-800 mb-8">Agenda Kegiatan</h1>
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+          Agenda Sekolah SMKN 14 Jakarta
+        </h1>
+        <p class="text-xl text-gray-600">Tahun Pelajaran 2025/2026</p>
+      </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Upcoming Events -->
-        <div class="md:col-span-2">
-          <div class="space-y-6">
-            <!-- Event Card -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-              <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4">
-                <div class="flex justify-between items-center">
-                  <h3 class="text-lg font-bold">Januari 2025</h3>
-                  <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Mendatang</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <h4 class="text-xl font-bold text-gray-800 mb-2">Rapat Koordinasi PPID</h4>
-                <p class="text-gray-600 mb-4">Rapat rutin untuk evaluasi kinerja dan perencanaan program PPID</p>
-                <div class="flex items-center text-sm text-gray-500">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  15 Januari 2025, 09:00 WIB
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-              <div class="bg-gradient-to-r from-green-500 to-teal-600 text-white p-4">
-                <div class="flex justify-between items-center">
-                  <h3 class="text-lg font-bold">Februari 2025</h3>
-                  <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Mendatang</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <h4 class="text-xl font-bold text-gray-800 mb-2">Sosialisasi Keterbukaan Informasi</h4>
-                <p class="text-gray-600 mb-4">Kegiatan sosialisasi kepada masyarakat tentang hak atas informasi publik</p>
-                <div class="flex items-center text-sm text-gray-500">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  20 Februari 2025, 13:00 WIB
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-              <div class="bg-gradient-to-r from-yellow-500 to-orange-600 text-white p-4">
-                <div class="flex justify-between items-center">
-                  <h3 class="text-lg font-bold">Maret 2025</h3>
-                  <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Mendatang</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <h4 class="text-xl font-bold text-gray-800 mb-2">Pelatihan Pengelolaan Informasi</h4>
-                <p class="text-gray-600 mb-4">Pelatihan bagi staf PPID dalam pengelolaan dan pelayanan informasi publik</p>
-                <div class="flex items-center text-sm text-gray-500">
-                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  10 Maret 2025, 08:00 WIB
-                </div>
-              </div>
-            </div>
+      <!-- Academic Year Overview -->
+      <!-- <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-6 mb-8">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Semester Ganjil</h2>
+            <p class="text-blue-100">Oktober 2025 - Desember 2025</p>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Semester Genap</h2>
+            <p class="text-blue-100">Januari 2026 - Juni 2026</p>
           </div>
         </div>
+      </div> -->
 
-        <!-- Calendar Widget -->
-        <div>
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Kalender</h3>
-            <div class="text-center">
-              <div class="text-4xl font-bold text-blue-600 mb-2">15</div>
-              <div class="text-lg text-gray-600 mb-4">Januari 2025</div>
-              <div class="space-y-2 text-sm">
-                <div class="flex justify-between">
-                  <span>Senin</span>
-                  <span class="text-gray-400">14</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Selasa</span>
-                  <span class="text-blue-600 font-bold">15</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Rabu</span>
-                  <span class="text-gray-400">16</span>
-                </div>
-              </div>
-            </div>
+      <!-- Agenda Table -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th
+                  class="px-6 py-4 text-left text-xs font-bold text-gray-800 uppercase tracking-wider"
+                  >No</th
+                >
+                <th
+                  class="px-6 py-4 text-left text-xs font-bold text-gray-800 uppercase tracking-wider"
+                  >Kegiatan</th
+                >
+                <th
+                  class="px-6 py-4 text-left text-xs font-bold text-gray-800 uppercase tracking-wider"
+                  >Waktu</th
+                >
+                <th
+                  class="px-6 py-4 text-left text-xs font-bold text-gray-800 uppercase tracking-wider"
+                  >Penanggung Jawab</th
+                >
+                <th
+                  class="px-6 py-4 text-left text-xs font-bold text-gray-800 uppercase tracking-wider"
+                  >Tempat</th
+                >
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >1</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Upacara Peringatan Hari Kesaktian Pancasila</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >1 Oktober 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >2</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Upacara Peringatan Hari Sumpah Pemuda</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >28 Oktober 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >3</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Bulan Bahasa dan Sastra</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >28 Oktober 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >4</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Tes Kemampuan Akademik Kelas XII</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >3 – 4 November 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Waka. Akademik, K3</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Lab SMKN 14 Jakarta</td
+                >
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >5</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Peringatan Hari Guru Nasional</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >25 November 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >6</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Perkiraan USK kelas 12</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >24 November – 14 Desember 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Kepala Sekolah, Waka. Akademik, Ketua LSP K3</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Lab SMKN 14 Jakarta</td
+                >
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >7</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Asesmen Sumatif Akhir Semester Ganjil</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >1 – 5 Desember 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Waka. Akademik, K3</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >8</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Remedial dan Pengayaan</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >8 - 12 Desember 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Akademik</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >9</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Classmeeting</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >16-18 Desember 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >10</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Pembagian Laporan Hasil Belajar Peserta Didik Semester Ganjil</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >19 Desember 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Waka. Akademik Walikelas</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >11</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Hari Raya Natal</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >25 Desember 2025</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >12</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Libur Semester Gasal</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >22 Desember 2025 – 2 Januari 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Tim Manajemen</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >13</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Tahun Baru Islam</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >1 Januari 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >14</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Awal / Pelaksanaan KBM Semester Genap</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >5 Januari - 18 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Kepala Sekolah Guru Mata Pelajaran</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >15</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Isra' Miraj</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >17 Februari 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >16</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Perkiraan Libur Awal Ramadhan</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >16 – 20 Februari 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Akademik</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >17</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Hari Raya Nyepi</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >19 Maret 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">---</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >18</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Libur Awal Idul Fitri</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >16 – 27 Maret 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Kepala Sekolah</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >19</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Idul Fitri</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >20 -21 Maret 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Kepala Sekolah</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >20</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Wafat Isa Almasih</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >3 April 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">---</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >21</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Asesmen Tengah Semester Genap</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >6 – 10 April 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Waka. Akademik K3</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >22</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Pembagian Laporan Hasil Belajar Peserta Didik Tengah Semester
+                  Genap</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >30 April 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka. Akademik</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >23</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Hari Buruh Nasional</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >1 Mei 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">---</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >24</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Hari Kenaikan Isa Al-Masih</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >14 Mei 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">---</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >25</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Hari Raya Waisak</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >23 Mei 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">---</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >26</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Hari Lahir Pancasila</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >1 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Kepala Sekolah</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >27</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Asesmen Sumatif Akhir Tahun Semester Genap</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >4 – 10 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Waka. Akademik K3</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >28</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Susulan, Remedial dan pengayaan</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >11 – 12 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Guru Mata Pelajaran</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >29</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Rapat Kenaikan Kelas</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >12 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka Akademik</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >30</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900">Class Meeting</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >12 – 16 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Waka Kesiswaan</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >31</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Pembagian LHB Peserta Didik Semester Genap 2025/2026</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >19 Juni 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Wali kelas</td>
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >32</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Perkiraan PPDB 2026/2027</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >Juni – Juli 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Waka Kesiswaan Panitia</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >33</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Libur Akhir Tahun Pelajaran 2025/2026</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >22 Juni – 3 Juli 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">Kepala Sekolah</td>
+                <td class="px-6 py-4 text-sm text-gray-700">-</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td
+                  class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                  >34</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-900"
+                  >Raker Tahun Pelajaran 2026/2027 In House Training</td
+                >
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"
+                  >Juli 2026</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700"
+                  >Kepala Sekolah Waka. Akademik</td
+                >
+                <td class="px-6 py-4 text-sm text-gray-700">SMKN 14 Jakarta</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="mt-8 bg-gray-50 rounded-lg p-6">
+        <h3 class="text-lg font-bold text-gray-800 mb-4">Keterangan</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="text-gray-600">
+              <strong>KBM:</strong> Kegiatan Belajar Mengajar
+            </p>
+            <p class="text-gray-600">
+              <strong>USK:</strong> Ujian Sekolah Kompetensi
+            </p>
+            <p class="text-gray-600">
+              <strong>LHB:</strong> Laporan Hasil Belajar
+            </p>
+            <p class="text-gray-600">
+              <strong>PPDB:</strong> Penerimaan Peserta Didik Baru
+            </p>
           </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 mt-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Kategori Agenda</h3>
-            <ul class="space-y-2">
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Rapat</a></li>
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Sosialisasi</a></li>
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Pelatihan</a></li>
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Seminar</a></li>
-            </ul>
+          <div>
+            <p class="text-gray-600">
+              <strong>Waka:</strong> Wakil Kepala Sekolah
+            </p>
+            <p class="text-gray-600">
+              <strong>K3:</strong> Kelompok Kerja Kepala
+            </p>
+            <p class="text-gray-600">
+              <strong>LSP:</strong> Lembaga Sertifikasi Profesi
+            </p>
           </div>
         </div>
       </div>

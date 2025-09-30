@@ -1,42 +1,172 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 
-const laporanPPID = [
+// Laporan Keuangan 2024
+const laporanKeuangan2024 = [
   {
     no: 1,
-    jenis: "Laporan Tahunan",
-    nama: "Laporan Keterbukaan Informasi Publik Tahun 2023",
-    periode: "Januari - Desember 2023",
-    tanggal: "31 Januari 2024"
+    jenis: "Laporan Realisasi BOP Triwulan I 2024",
+    nama: "Laporan Realisasi BOP Triwulan I TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOP_2024/BOP_Form _ Laporan Realisasi_SMKN 14 JAKARTA_TW.1_TA2024.pdf",
+    kategori: "BOP 2024",
   },
   {
     no: 2,
-    jenis: "Laporan Triwulan",
-    nama: "Laporan PPID Triwulan IV Tahun 2023",
-    periode: "Oktober - Desember 2023",
-    tanggal: "15 Januari 2024"
+    jenis: "Laporan Realisasi BOP Triwulan II 2024",
+    nama: "Laporan Realisasi BOP Triwulan II TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOP_2024/BOP_Form _ Laporan Realisasi_SMKN 14 JAKARTA_TW.2_TA2024.pdf",
+    kategori: "BOP 2024",
   },
   {
     no: 3,
-    jenis: "Laporan Triwulan",
-    nama: "Laporan PPID Triwulan III Tahun 2023",
-    periode: "Juli - September 2023",
-    tanggal: "15 Oktober 2023"
+    jenis: "Laporan Realisasi BOP Triwulan III 2024",
+    nama: "Laporan Realisasi BOP Triwulan III TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOP_2024/BOP_Form _ Laporan Realisasi_SMKN 14 JAKARTA_TW.3_TA2024.pdf",
+    kategori: "BOP 2024",
   },
   {
     no: 4,
-    jenis: "Laporan Triwulan",
-    nama: "Laporan PPID Triwulan II Tahun 2023",
-    periode: "April - Juni 2023",
-    tanggal: "15 Juli 2023"
+    jenis: "Laporan Realisasi BOP Triwulan IV 2024",
+    nama: "Laporan Realisasi BOP Triwulan IV TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOP_2024/BOP_Form _ Laporan Realisasi_SMKN 14 JAKARTA_TW.4_TA2024.pdf",
+    kategori: "BOP 2024",
   },
   {
     no: 5,
-    jenis: "Laporan Triwulan",
-    nama: "Laporan PPID Triwulan I Tahun 2023",
-    periode: "Januari - Maret 2023",
-    tanggal: "15 April 2023"
-  }
+    jenis: "Laporan Realisasi BOS Triwulan I 2024",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan I TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOS_2024/BOSP_Form _ Laporan Monitoring Realisasi Triwulan.I_SMKN 14 JAKARTA_TA2024.pdf",
+    kategori: "BOS 2024",
+  },
+  {
+    no: 6,
+    jenis: "Laporan Realisasi BOS Triwulan II 2024",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan II TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOS_2024/BOSP_Form _ Laporan Monitoring Realisasi Triwulan.II_SMKN 14 JAKARTA_TA2024.pdf",
+    kategori: "BOS 2024",
+  },
+  {
+    no: 7,
+    jenis: "Laporan Realisasi BOS Triwulan III 2024",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan III TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOS_2024/BOSP_Form _ Laporan Monitoring Realisasi Triwulan.III_SMKN 14 JAKARTA_TA2024.pdf",
+    kategori: "BOS 2024",
+  },
+  {
+    no: 8,
+    jenis: "Laporan Realisasi BOS Triwulan IV 2024",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan IV TA 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2024/LAPORAN REALISASI ANGGARAN_BOS_2024/BOSP_Form _ Laporan Monitoring Realisasi Triwulan.IV_SMKN 14 JAKARTA_TA2024.pdf",
+    kategori: "BOS 2024",
+  },
+];
+
+// Laporan Keuangan 2025
+const laporanKeuangan2025 = [
+  {
+    no: 1,
+    jenis: "Laporan Realisasi BOP Triwulan I 2025",
+    nama: "Laporan Realisasi BOP Triwulan I TA 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2025/LAPORAN REALISASI ANGGARAN_BOP_2025/BOP_Form _ Laporan Realisasi_ SMKN 14 JAKARTA_TW.1_TA2025.pdf",
+    kategori: "BOP 2025",
+  },
+  {
+    no: 2,
+    jenis: "Laporan Realisasi BOP Triwulan II 2025",
+    nama: "Laporan Realisasi BOP Triwulan II TA 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2025/LAPORAN REALISASI ANGGARAN_BOP_2025/BOP_Form _ Laporan Realisasi_SMKN 14 JAKARTA_TW.2_TA2025.pdf",
+    kategori: "BOP 2025",
+  },
+  {
+    no: 3,
+    jenis: "Laporan Realisasi BOP Triwulan III 2025",
+    nama: "Laporan Realisasi BOP Triwulan III TA 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2025/LAPORAN REALISASI ANGGARAN_BOP_2025/BOP_Form _ Laporan Realisasi_SMKN 14 JAKARTA_TW.3_TA2025.pdf",
+    kategori: "BOP 2025",
+  },
+  {
+    no: 4,
+    jenis: "Laporan Realisasi BOS Triwulan I 2025",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan I TA 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2025/LAPORAN REALISASI ANGGARAN_BOS_2025/BOSP_Form _ Laporan Monitoring Realisasi Triwulan I_SMKN 14 JAKARTA_TA2025.pdf",
+    kategori: "BOS 2025",
+  },
+  {
+    no: 5,
+    jenis: "Laporan Realisasi BOS Triwulan II 2025",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan II TA 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2025/LAPORAN REALISASI ANGGARAN_BOS_2025/BOSP_Form _ Laporan Monitoring Realisasi Triwulan II_SMKN 14 JAKARTA_TA2025.pdf",
+    kategori: "BOS 2025",
+  },
+  {
+    no: 6,
+    jenis: "Laporan Realisasi BOS Triwulan III 2025",
+    nama: "Laporan Monitoring Realisasi BOS Triwulan III TA 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Laporan Realisasi T.A. 2025/LAPORAN REALISASI ANGGARAN_BOS_2025/BOSP_Form _ Laporan Monitoring Realisasi Triwulan III_SMKN 14 JAKARTA_TA2025.pdf",
+    kategori: "BOS 2025",
+  },
+];
+
+// Rencana Kerja Anggaran (RKA)
+const rencanaAnggaran = [
+  {
+    no: 1,
+    jenis: "RKA BOP 2024",
+    nama: "Rencana Kerja Anggaran BOP Tahun 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Rencana Kerja Anggaran_ERKAS 2024/RKA BOP TAHUN 2024.pdf",
+    kategori: "RKA 2024",
+  },
+  {
+    no: 2,
+    jenis: "RKA BOS 2024",
+    nama: "Rencana Kerja Anggaran BOS Tahun 2024",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Rencana Kerja Anggaran_ERKAS 2024/RKA BOS TAHUN 2024.pdf",
+    kategori: "RKA 2024",
+  },
+  {
+    no: 3,
+    jenis: "RKA BOP 2025",
+    nama: "Rencana Kerja Anggaran BOP Tahun 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Rencana Kerja Anggaran_ERKAS 2025/RKA BOP TAHUN 2025.pdf",
+    kategori: "RKA 2025",
+  },
+  {
+    no: 4,
+    jenis: "RKA BOS 2025",
+    nama: "Rencana Kerja Anggaran BOS Tahun 2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KEUANGAN/Rencana Kerja Anggaran_ERKAS 2025/RKA BOS TAHUN 2025.pdf",
+    kategori: "RKA 2025",
+  },
+];
+
+// Laporan Kinerja
+const laporanKinerja = [
+  {
+    no: 1,
+    jenis: "Laporan Kinerja",
+    nama: "PKKS SMKN 14 Jakarta TP 2024-2025",
+    fileName:
+      "LAPORAN PPID/LAPORAN KINERJA/PKKS SMKN 14 JAKARTA TP 20242025_20250930_091345_0000.pdf",
+    kategori: "Kinerja 2024-2025",
+  },
 ];
 ---
 
@@ -45,40 +175,372 @@ const laporanPPID = [
     <div class="max-w-6xl mx-auto">
       <h1 class="text-4xl font-bold text-gray-800 mb-8">Laporan PPID</h1>
 
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div class="overflow-x-auto">
-          <table class="w-full">
-            <thead class="bg-primary text-white">
-              <tr>
-                <th class="px-6 py-4 text-center text-sm font-medium text-primary">No.</th>
-                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Jenis Laporan</th>
-                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Nama Laporan</th>
-                <th class="px-6 py-4 text-left text-sm font-medium text-primary">Periode</th>
-                <th class="px-6 py-4 text-center text-sm font-medium text-primary">Download</th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-              {laporanPPID.map((item) => (
-                <tr class="hover:bg-gray-50">
-                  <td class="px-6 py-4 text-center text-sm text-gray-900">{item.no}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.jenis}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.nama}</td>
-                  <td class="px-6 py-4 text-sm text-gray-900">{item.periode}</td>
-                  <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
-                      📥 Download
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <!-- Tab Navigation -->
+      <div class="mb-8">
+        <div class="border-b border-gray-200">
+          <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+            <button
+              id="tab-keuangan-2024"
+              class="tab-button active whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary"
+            >
+              Laporan Keuangan 2024
+            </button>
+            <button
+              id="tab-keuangan-2025"
+              class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            >
+              Laporan Keuangan 2025
+            </button>
+            <button
+              id="tab-rka"
+              class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            >
+              Rencana Kerja Anggaran
+            </button>
+            <button
+              id="tab-kinerja"
+              class="tab-button whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+            >
+              Laporan Kinerja
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Laporan Keuangan 2024 Tab -->
+        <div id="content-keuangan-2024" class="tab-pane active">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-primary">
+              <h2 class="text-xl font-semibold text-white">
+                Laporan Keuangan Tahun 2024
+              </h2>
+              <p class="text-white mt-1">
+                Laporan realisasi anggaran BOP dan BOS tahun 2024
+              </p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >No.</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Jenis Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Nama Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Kategori</th
+                    >
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Download</th
+                    >
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {
+                    laporanKeuangan2024.map((item) => (
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-center text-sm text-gray-900">
+                          {item.no}
+                        </td>
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                          {item.jenis}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          {item.nama}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-500">
+                          {item.kategori}
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                          <a
+                            href={`/${item.fileName}`}
+                            download
+                            class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center cursor-pointer"
+                          >
+                            📥 Download
+                          </a>
+                        </td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laporan Keuangan 2025 Tab -->
+        <div id="content-keuangan-2025" class="tab-pane hidden">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-green-600">
+              <h2 class="text-xl font-semibold text-white">
+                Laporan Keuangan Tahun 2025
+              </h2>
+              <p class="text-green-100 mt-1">
+                Laporan realisasi anggaran BOP dan BOS tahun 2025
+              </p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >No.</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Jenis Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Nama Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Kategori</th
+                    >
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Download</th
+                    >
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {
+                    laporanKeuangan2025.map((item) => (
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-center text-sm text-gray-900">
+                          {item.no}
+                        </td>
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                          {item.jenis}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          {item.nama}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-500">
+                          {item.kategori}
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                          <a
+                            href={`/${item.fileName}`}
+                            download
+                            class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center cursor-pointer"
+                          >
+                            📥 Download
+                          </a>
+                        </td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rencana Kerja Anggaran Tab -->
+        <div id="content-rka" class="tab-pane hidden">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-orange-600">
+              <h2 class="text-xl font-semibold text-white">
+                Rencana Kerja Anggaran (RKA)
+              </h2>
+              <p class="text-orange-100 mt-1">
+                Dokumen perencanaan anggaran BOP dan BOS untuk tahun 2024-2025
+              </p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >No.</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Jenis Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Nama Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Kategori</th
+                    >
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Download</th
+                    >
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {
+                    rencanaAnggaran.map((item) => (
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-center text-sm text-gray-900">
+                          {item.no}
+                        </td>
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                          {item.jenis}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          {item.nama}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-500">
+                          {item.kategori}
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                          <a
+                            href={`/${item.fileName}`}
+                            download
+                            class="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center cursor-pointer"
+                          >
+                            📥 Download
+                          </a>
+                        </td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laporan Kinerja Tab -->
+        <div id="content-kinerja" class="tab-pane hidden">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-purple-600">
+              <h2 class="text-xl font-semibold text-white">Laporan Kinerja</h2>
+              <p class="text-purple-100 mt-1">
+                Laporan kinerja dan evaluasi sekolah
+              </p>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >No.</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Jenis Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Nama Laporan</th
+                    >
+                    <th
+                      class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Kategori</th
+                    >
+                    <th
+                      class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >Download</th
+                    >
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  {
+                    laporanKinerja.map((item) => (
+                      <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 text-center text-sm text-gray-900">
+                          {item.no}
+                        </td>
+                        <td class="px-6 py-4 text-sm font-medium text-gray-900">
+                          {item.jenis}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-900">
+                          {item.nama}
+                        </td>
+                        <td class="px-6 py-4 text-sm text-gray-500">
+                          {item.kategori}
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                          <a
+                            href={`/${item.fileName}`}
+                            download
+                            class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm transition-colors duration-200 inline-flex items-center cursor-pointer"
+                          >
+                            📥 Download
+                          </a>
+                        </td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="mt-8 text-center">
-        <p class="text-gray-600 mb-4">Laporan PPID disusun secara berkala untuk memastikan transparansi dan akuntabilitas pengelolaan informasi publik.</p>
+        <p class="text-gray-600 mb-4">
+          Laporan PPID disusun secara berkala untuk memastikan transparansi dan
+          akuntabilitas pengelolaan informasi publik.
+        </p>
       </div>
     </div>
   </div>
+
+  <script>
+    // Tab functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabPanes = document.querySelectorAll(".tab-pane");
+
+      tabButtons.forEach((button: Element) => {
+        button.addEventListener("click", (event) => {
+          const target = event.target as HTMLElement;
+          const tabId = target.id.replace("tab-", "");
+
+          // Remove active class from all tabs and panes
+          tabButtons.forEach((btn: Element) => {
+            (btn as HTMLElement).classList.remove(
+              "active",
+              "border-primary",
+              "text-primary",
+            );
+            (btn as HTMLElement).classList.add(
+              "border-transparent",
+              "text-gray-500",
+            );
+          });
+
+          tabPanes.forEach((pane: Element) => {
+            (pane as HTMLElement).classList.add("hidden");
+            (pane as HTMLElement).classList.remove("active");
+          });
+
+          // Add active class to clicked tab and corresponding pane
+          target.classList.remove("border-transparent", "text-gray-500");
+          target.classList.add("active", "border-primary", "text-primary");
+
+          const targetPane = document.getElementById(`content-${tabId}`);
+          if (targetPane) {
+            targetPane.classList.remove("hidden");
+            targetPane.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
 </PageLayout>

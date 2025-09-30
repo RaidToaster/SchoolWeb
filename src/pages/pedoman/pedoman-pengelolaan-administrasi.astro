@@ -4,38 +4,59 @@ import PageLayout from "../../layouts/PageLayout.astro";
 const pedomanAdministrasi = [
   {
     no: 1,
-    nama: "Pedoman Pengelolaan Administrasi Sekolah",
-    deskripsi: "Panduan umum pengelolaan administrasi di SMKN 14 Jakarta",
+    nama: "Buku Panduan Kerja Tenaga Administrasi Sekolah",
+    deskripsi: "Panduan kerja bagi tenaga administrasi sekolah dalam melaksanakan tugas-tugas administratif",
     tahun: "2024",
-    versi: "Versi 3.0"
+    versi: "Versi 1.0"
   },
   {
     no: 2,
-    nama: "SOP Penerimaan dan Pendistribusian Surat",
-    deskripsi: "Standar operasional prosedur penerimaan, pendistribusian, dan pengarsipan surat",
-    tahun: "2024",
-    versi: "Versi 2.1"
+    nama: "KepGub No. 737 Tahun 2022 Sistem Klasifikasi Keamanan dan Akses Arsip Dinamis (SKKAAD)",
+    deskripsi: "Peraturan Gubernur tentang sistem klasifikasi keamanan dan akses arsip dinamis",
+    tahun: "2022",
+    versi: "Versi 1.0"
   },
   {
     no: 3,
-    nama: "Pedoman Pengelolaan Arsip",
-    deskripsi: "Panduan pengelolaan arsip aktif, inaktif, dan vital di sekolah",
-    tahun: "2023",
-    versi: "Versi 1.8"
+    nama: "KEPGUB No. 1598 Tahun 2021 tentang Klasifikasi Arsip",
+    deskripsi: "Keputusan Gubernur tentang klasifikasi arsip untuk pengelolaan arsip yang efektif",
+    tahun: "2021",
+    versi: "Versi 1.0"
   },
   {
     no: 4,
-    nama: "SOP Penyusunan Laporan",
-    deskripsi: "Standar operasional prosedur penyusunan berbagai jenis laporan sekolah",
-    tahun: "2024",
-    versi: "Versi 2.0"
+    nama: "KEPGUB NOMOR 1599 TAHUN 2021 - Jadwal Retensi Arsip",
+    deskripsi: "Keputusan Gubernur tentang jadwal retensi arsip untuk penyimpanan dan pemusnahan arsip",
+    tahun: "2021",
+    versi: "Versi 1.0"
   },
   {
     no: 5,
-    nama: "Pedoman Penggunaan Sistem Informasi",
-    deskripsi: "Panduan penggunaan sistem informasi manajemen sekolah",
-    tahun: "2024",
-    versi: "Versi 1.5"
+    nama: "PERGUB NOMOR 99 TAHUN 2021 - Tata Naskah Dinas",
+    deskripsi: "Peraturan Gubernur tentang tata naskah dinas untuk standarisasi surat-menyurat resmi",
+    tahun: "2021",
+    versi: "Versi 1.0"
+  },
+  {
+    no: 6,
+    nama: "PERMENDIKNAS NOMOR 24 TAHUN 2008 - Standar Tenaga Administrasi Sekolah atau Madrasah",
+    deskripsi: "Permendiknas tentang standar tenaga administrasi sekolah atau madrasah",
+    tahun: "2008",
+    versi: "Versi 1.0"
+  },
+  {
+    no: 7,
+    nama: "PP Nomor 28 Tahun 2012 - Pelaksanaan Undang Undang Nomor 43 Tahun 2009 Tentang Kearsipan",
+    deskripsi: "Peraturan Pemerintah tentang pelaksanaan Undang-Undang Kearsipan",
+    tahun: "2012",
+    versi: "Versi 1.0"
+  },
+  {
+    no: 8,
+    nama: "UU Nomor 43 Tahun 2009 - Kearsipan",
+    deskripsi: "Undang-Undang tentang Kearsipan untuk pengelolaan arsip negara yang tertib",
+    tahun: "2009",
+    versi: "Versi 1.0"
   }
 ];
 ---
@@ -67,7 +88,7 @@ const pedomanAdministrasi = [
                   <td class="px-6 py-4 text-center text-sm text-gray-900">{item.tahun}</td>
                   <td class="px-6 py-4 text-center text-sm text-gray-900">{item.versi}</td>
                   <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200 cursor-pointer">
                       📥 Download
                     </button>
                   </td>

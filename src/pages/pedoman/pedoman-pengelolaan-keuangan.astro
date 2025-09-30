@@ -4,45 +4,38 @@ import PageLayout from "../../layouts/PageLayout.astro";
 const pedomanKeuangan = [
   {
     no: 1,
-    nama: "Pedoman Pengelolaan Keuangan Sekolah",
-    deskripsi: "Panduan umum pengelolaan keuangan di SMKN 14 Jakarta",
-    tahun: "2024",
-    versi: "Versi 3.2"
+    nama: "Pelaksanaan Permendikdasmen Nomor 8 Tahun 2025",
+    deskripsi: "Petunjuk pelaksanaan Permendikdasmen Nomor 8 Tahun 2025 tentang pengelolaan keuangan sekolah",
+    tahun: "2025",
+    versi: "Versi 1.0"
   },
   {
     no: 2,
-    nama: "SOP Penyusunan Anggaran",
-    deskripsi: "Standar operasional prosedur penyusunan anggaran pendapatan dan belanja sekolah",
-    tahun: "2024",
-    versi: "Versi 2.0"
+    nama: "PERDA NOMOR 7 TAHUN 2022 - Pengelolaan Keuangan Daerah",
+    deskripsi: "Peraturan Daerah tentang pengelolaan keuangan daerah untuk transparansi dan akuntabilitas",
+    tahun: "2022",
+    versi: "Versi 1.0"
   },
   {
     no: 3,
-    nama: "Pedoman Pengelolaan BOS",
-    deskripsi: "Panduan pengelolaan dana Bantuan Operasional Sekolah (BOS)",
-    tahun: "2024",
-    versi: "Versi 2.5"
+    nama: "Permendikdasmen No. 8 Tahun 2025 - Juknis BOSP",
+    deskripsi: "Permendikdasmen tentang petunjuk teknis Bantuan Operasional Satuan Pendidikan",
+    tahun: "2025",
+    versi: "Versi 1.0"
   },
   {
     no: 4,
-    nama: "SOP Pengadaan Barang dan Jasa",
-    deskripsi: "Standar operasional prosedur pengadaan barang dan jasa di sekolah",
-    tahun: "2023",
-    versi: "Versi 1.8"
+    nama: "SK Kadisdik e-0008 Tahun 2025 - Petunjuk Teknis RKAS",
+    deskripsi: "Surat Keputusan Kadisdik tentang petunjuk teknis penyusunan RKAS dan pengelolaan keuangan",
+    tahun: "2025",
+    versi: "Versi 1.0"
   },
   {
     no: 5,
-    nama: "Pedoman Pertanggungjawaban Keuangan",
-    deskripsi: "Panduan pertanggungjawaban dan pelaporan keuangan sekolah",
+    nama: "SK Kadisdik e-0041 TAHUN 2024 - Daftar Kode Rekening Belanja BOP dan BOSP",
+    deskripsi: "Surat Keputusan Kadisdik tentang daftar kode rekening belanja sumber dana BOP dan BOSP",
     tahun: "2024",
-    versi: "Versi 2.1"
-  },
-  {
-    no: 6,
-    nama: "SOP Audit Internal",
-    deskripsi: "Standar operasional prosedur audit internal keuangan sekolah",
-    tahun: "2023",
-    versi: "Versi 1.5"
+    versi: "Versi 1.0"
   }
 ];
 ---
@@ -74,7 +67,7 @@ const pedomanKeuangan = [
                   <td class="px-6 py-4 text-center text-sm text-gray-900">{item.tahun}</td>
                   <td class="px-6 py-4 text-center text-sm text-gray-900">{item.versi}</td>
                   <td class="px-6 py-4 text-center">
-                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200">
+                    <button class="bg-primary hover:bg-primary-hover text-white px-3 py-1 rounded text-sm transition-colors duration-200 cursor-pointer">
                       📥 Download
                     </button>
                   </td>
