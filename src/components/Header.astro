@@ -224,33 +224,46 @@ const links = [
     <nav class="p-6">
       {links.map((link, index) => (
         <div class="opacity-100 transition-all duration-300 peer-checked:opacity-100 peer-checked:translate-y-0" style={`transition-delay: ${(index + 2) * 50}ms`}>
-          <div class="group">
-            <a
-              href={link.href}
-              class:list={[
-                "flex items-center px-4 py-3 rounded-xl text-gray-700 font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2 group",
-                {
-                  "bg-primary/20 text-primary shadow-sm border-l-4 border-primary":
-                    Astro.url.pathname === link.href,
-                },
-              ]}
-            >
-              {link.icon && (
-                <link.icon class="w-5 h-5 mr-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
-              )}
-              <span class="flex-1">{link.name}</span>
-              {link.hasDropdown && (
-                <ChevronDown class="w-4 h-4 opacity-50 transform group-hover:rotate-180 transition-transform duration-300" />
-              )}
-            </a>
+          <div class="relative">
+            {link.hasDropdown ? (
+              <>
+                <input type="checkbox" id={`mobile-dropdown-${index}`} class="peer hidden dropdown-toggle" />
+                <label
+                  for={`mobile-dropdown-${index}`}
+                  class="flex items-center px-4 py-3 rounded-xl text-gray-700 font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2 cursor-pointer"
+                >
+                  {link.icon && (
+                    <link.icon class="w-5 h-5 mr-3 opacity-70 transition-opacity duration-300" />
+                  )}
+                  <span class="flex-1">{link.name}</span>
+                  <ChevronDown class="w-4 h-4 opacity-50 transform peer-checked:rotate-180 transition-transform duration-300" />
+                </label>
+              </>
+            ) : (
+              <a
+                href={link.href}
+                class:list={[
+                  "flex items-center px-4 py-3 rounded-xl text-gray-700 font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2",
+                  {
+                    "bg-primary/20 text-primary shadow-sm border-l-4 border-primary":
+                      Astro.url.pathname === link.href,
+                  },
+                ]}
+              >
+                {link.icon && (
+                  <link.icon class="w-5 h-5 mr-3 opacity-70 transition-opacity duration-300" />
+                )}
+                <span class="flex-1">{link.name}</span>
+              </a>
+            )}
 
             <!-- Mobile Dropdown -->
             {link.hasDropdown && link.dropdown && (
-              <div class="ml-8 mt-2 space-y-1 max-h-0 overflow-hidden group-hover:max-h-96 transition-all duration-300">
+              <div class="ml-8 mt-2 space-y-1 max-h-0 overflow-hidden transition-all duration-300 dropdown-content">
                 {link.dropdown.map((dropdownItem, dropdownIndex) => (
                   <a
                     href={dropdownItem.href}
-                    class="block px-4 py-2 text-sm text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0"
+                    class="block px-4 py-2 text-sm text-gray-600 hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 opacity-0 translate-x-4"
                     style={`transition-delay: ${dropdownIndex * 50}ms`}
                   >
                     {dropdownItem.name}
@@ -346,3 +359,35 @@ const links = [
     outline-offset: 2px;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdownToggles = document.querySelectorAll<HTMLInputElement>(".dropdown-toggle");
+
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("change", () => {
+        const parent = toggle.parentElement;
+        if (!parent) return;
+
+        const content = parent.querySelector<HTMLElement>(".dropdown-content");
+        if (!content) return;
+
+        const links = content.querySelectorAll("a");
+
+        if (toggle.checked) {
+          content.style.maxHeight = content.scrollHeight + "px";
+          links.forEach(link => {
+            link.classList.add("opacity-100", "translate-x-0");
+            link.classList.remove("opacity-0", "translate-x-4");
+          });
+        } else {
+          content.style.maxHeight = "0";
+           links.forEach(link => {
+            link.classList.remove("opacity-100", "translate-x-0");
+            link.classList.add("opacity-0", "translate-x-4");
+          });
+        }
+      });
+    });
+  });
+</script>
