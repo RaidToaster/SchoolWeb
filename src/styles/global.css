@@ -8,3 +8,101 @@
   --color-footer-bg: #059669;
   --color-footer-text: #ffffff;
 }
+
+/* Accessibility Styles - Tailwind Compatible */
+.accessibility-enabled {
+  transition: all 0.3s ease;
+}
+
+/* Enhanced focus styles for accessibility */
+.accessibility-enabled *:focus {
+  outline: 3px solid #059669;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Highlight Links - subtle underline approach */
+.highlight-links.accessibility-enabled a:not(.no-highlight):not(.btn):not([class*="bg-primary"]) {
+  position: relative;
+  text-decoration: none;
+}
+
+.highlight-links.accessibility-enabled a:not(.no-highlight):not(.btn):not([class*="bg-primary"])::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6 0%, #3b82f6 100%);
+  opacity: 0.4;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.highlight-links.accessibility-enabled a:not(.no-highlight):not(.btn):not([class*="bg-primary"]):hover::after {
+  transform: scaleX(1);
+}
+
+/* Bigger Text - targeted and proportional */
+.bigger-text.accessibility-enabled p,
+.bigger-text.accessibility-enabled span:not(.text-xs):not(.text-sm),
+.bigger-text.accessibility-enabled div:not([class*="flex"]):not([class*="grid"]):not([class*="container"]),
+.bigger-text.accessibility-enabled table,
+.bigger-text.accessibility-enabled th,
+.bigger-text.accessibility-enabled td,
+.bigger-text.accessibility-enabled caption {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* Bigger Text for headings */
+.bigger-text.accessibility-enabled h1 { font-size: 2.25rem; }
+.bigger-text.accessibility-enabled h2 { font-size: 1.875rem; }
+.bigger-text.accessibility-enabled h3 { font-size: 1.5rem; }
+.bigger-text.accessibility-enabled h4 { font-size: 1.25rem; }
+.bigger-text.accessibility-enabled h5 { font-size: 1.125rem; }
+.bigger-text.accessibility-enabled h6 { font-size: 1rem; }
+
+/* Legible Fonts - system fonts for better readability */
+.legible-fonts.accessibility-enabled p,
+.legible-fonts.accessibility-enabled span,
+.legible-fonts.accessibility-enabled div {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* Big Cursor */
+.big-cursor.accessibility-enabled {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 32 32'%3E%3Cpath d='M8.33088 16.4904H7.29639L6.92048 16.6625L1.25001 22.3536L1.25001 1.59721L16.4802 16.4904H8.33088Z' fill='white' stroke='black' stroke-width='2'/%3E%3C/svg%3E")
+      0 0,
+    auto;
+}
+
+/* Pause Animations - only essential animations */
+.pause-animations.accessibility-enabled *:not(.accessibility-toggle):not(.bg-primary) {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Invert Colors - only for images/media */
+.invert-colors.accessibility-enabled img,
+.invert-colors.accessibility-enabled video,
+.invert-colors.accessibility-enabled canvas {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Dark Contrast - subtle enhancement for specific elements */
+.dark-contrast.accessibility-enabled {
+  background-color: #ffffff;
+  color: #111827;
+}
+
+.dark-contrast.accessibility-enabled .bg-gray-50 {
+  background-color: #f3f4f6;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-500 {
+  color: #6b7280;
+}
