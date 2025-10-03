@@ -1,5 +1,120 @@
 ---
+// File: src/pages/berita.astro
 import PageLayout from "../layouts/PageLayout.astro";
+import fs from 'fs';
+import path from 'path';
+
+// Define types for news data
+interface NewsItem {
+  title: string;
+  category: string;
+  folder: string;
+  contentFile: string;
+  images: string[];
+  date: Date;
+}
+
+// Function to get news data from public/Berita folder
+function getNewsData(): NewsItem[] {
+  const beritaPath = path.join(process.cwd(), 'public', 'Berita');
+  const categories: string[] = [
+    'ADIWIYATA', 'AKUNTANSI', 'DKV', 'HUMAS', 'KEAGAMAAN',
+    'KESISWAAN', 'KURIKULUM', 'OSIS  MPK', 'PEMASARAN', 'PERKANTORAN'
+  ];
+
+  const newsData: NewsItem[] = [];
+
+  categories.forEach((category: string) => {
+    const categoryPath = path.join(beritaPath, category);
+
+    if (fs.existsSync(categoryPath)) {
+      const items = fs.readdirSync(categoryPath);
+
+      // Group items by subfolder (news article)
+      const newsGroups: { [key: string]: NewsItem } = {};
+      items.forEach((item: string) => {
+        const itemPath = path.join(categoryPath, item);
+        const stat = fs.statSync(itemPath);
+
+        if (stat.isDirectory()) {
+          const files = fs.readdirSync(itemPath);
+          const docxFiles = files.filter((file: string) => file.endsWith('.docx') && !file.startsWith('~$'));
+          const imageFiles = files.filter((file: string) =>
+            file.endsWith('.jpg') ||
+            file.endsWith('.jpeg') ||
+            file.endsWith('.JPG') ||
+            file.endsWith('.png')
+          );
+
+          if (docxFiles.length > 0) {
+            newsGroups[item] = {
+              title: docxFiles[0].replace('.docx', ''),
+              category: category,
+              folder: item,
+              contentFile: docxFiles[0],
+              images: imageFiles.slice(0, 4), // Limit to 4 images
+              date: stat.mtime
+            };
+          }
+        }
+      });
+
+      // Convert to array and sort by date (newest first)
+      Object.values(newsGroups).forEach((news: NewsItem) => {
+        newsData.push(news);
+      });
+    }
+  });
+
+  // Sort by date (newest first)
+  return newsData.sort((a: NewsItem, b: NewsItem) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+// Get news data
+const newsItems = getNewsData();
+
+// Function to format category names
+function formatCategoryName(category: string): string {
+  const categoryNames: { [key: string]: string } = {
+    'ADIWIYATA': 'Adiwiyata',
+    'AKUNTANSI': 'Akuntansi',
+    'DKV': 'DKV',
+    'HUMAS': 'Humas',
+    'KEAGAMAAN': 'Keagamaan',
+    'KESISWAAN': 'Kesiswaan',
+    'KURIKULUM': 'Kurikulum',
+    'OSIS  MPK': 'OSIS & MPK',
+    'PEMASARAN': 'Pemasaran',
+    'PERKANTORAN': 'Perkantoran'
+  };
+  return categoryNames[category] || category;
+}
+
+// Function to get category color
+function getCategoryColor(category: string): string {
+  const colors: { [key: string]: string } = {
+    'ADIWIYATA': 'bg-green-100 text-green-800',
+    'AKUNTANSI': 'bg-blue-100 text-blue-800',
+    'DKV': 'bg-purple-100 text-purple-800',
+    'HUMAS': 'bg-yellow-100 text-yellow-800',
+    'KEAGAMAAN': 'bg-indigo-100 text-indigo-800',
+    'KESISWAAN': 'bg-pink-100 text-pink-800',
+    'KURIKULUM': 'bg-red-100 text-red-800',
+    'OSIS  MPK': 'bg-orange-100 text-orange-800',
+    'PEMASARAN': 'bg-teal-100 text-teal-800',
+    'PERKANTORAN': 'bg-gray-100 text-gray-800'
+  };
+  return colors[category] || 'bg-gray-100 text-gray-800';
+}
+
+// Function to format date
+function formatDate(date: Date): string {
+  return new Date(date).toLocaleDateString('id-ID', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+}
 ---
 
 <PageLayout title="Berita - PPID SMKN 14 Jakarta">
@@ -7,65 +122,190 @@ import PageLayout from "../layouts/PageLayout.astro";
     <div class="max-w-6xl mx-auto">
       <h1 class="text-4xl font-bold text-gray-800 mb-8">Berita & Informasi</h1>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Featured News -->
-        <div class="md:col-span-2">
-          <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-            <div class="h-64 bg-gradient-to-r from-blue-500 to-purple-600"></div>
-            <div class="p-8">
-              <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded">Pengumuman</span>
-              <h2 class="text-2xl font-bold text-gray-800 mt-4 mb-4">Pengumuman Seleksi PPID Periode 2025</h2>
-              <p class="text-gray-600 leading-relaxed mb-4">
-                Pendaftaran seleksi Pejabat Pengelola Informasi dan Dokumentasi (PPID) untuk periode 2025 telah dibuka mulai tanggal 1 Januari 2025. Seleksi ini terbuka untuk seluruh pegawai SMKN 14 Jakarta yang memenuhi syarat.
-              </p>
-              <div class="flex items-center justify-between">
-                <span class="text-sm text-gray-500">15 Januari 2025</span>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Baca Selengkapnya →</a>
+      {newsItems.length === 0 ? (
+        <div class="text-center py-12">
+          <p class="text-gray-600 text-lg">Belum ada berita yang tersedia.</p>
+        </div>
+      ) : (
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Featured News -->
+          <div class="md:col-span-2">
+            {newsItems.length > 0 && (
+              <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+                {newsItems[0].images.length > 0 && (
+                  <div class="h-64 overflow-hidden">
+                    <img
+                      src={`/Berita/${newsItems[0].category}/${newsItems[0].folder}/${newsItems[0].images[0]}`}
+                      alt={newsItems[0].title}
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div class="p-8">
+                  <span class={`text-sm font-medium px-3 py-1 rounded ${getCategoryColor(newsItems[0].category)}`}>
+                    {formatCategoryName(newsItems[0].category)}
+                  </span>
+                  <h2 class="text-2xl font-bold text-gray-800 mt-4 mb-4">{newsItems[0].title}</h2>
+                  <p class="text-gray-600 leading-relaxed mb-4">
+                    {newsItems[0].title} - Kegiatan yang dilaksanakan oleh {formatCategoryName(newsItems[0].category)} SMKN 14 Jakarta.
+                  </p>
+                  {newsItems[0].images.length > 1 && (
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                      {newsItems[0].images.slice(1, 4).map((image, index) => (
+                        <img
+                          src={`/Berita/${newsItems[0].category}/${newsItems[0].folder}/${image}`}
+                          alt={`${newsItems[0].title} - Foto ${index + 2}`}
+                          class="w-full h-20 object-cover rounded"
+                        />
+                      ))}
+                    </div>
+                  )}
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">{formatDate(newsItems[0].date)}</span>
+                    <span class="text-blue-600 font-medium">Dokumentasi Lengkap</span>
+                  </div>
+                </div>
+              </article>
+            )}
+
+            <!-- News Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+              {newsItems.slice(1, 5).map((news, index) => (
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                  {news.images.length > 0 && (
+                    <div class="h-32 overflow-hidden">
+                      <img
+                        src={`/Berita/${news.category}/${news.folder}/${news.images[0]}`}
+                        alt={news.title}
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div class="p-6">
+                    <span class={`text-xs font-medium px-2 py-1 rounded ${getCategoryColor(news.category)}`}>
+                      {formatCategoryName(news.category)}
+                    </span>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3 line-clamp-2">{news.title}</h3>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                      Kegiatan {formatCategoryName(news.category)} yang dilaksanakan di SMKN 14 Jakarta.
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-xs text-gray-500">{formatDate(news.date)}</span>
+                      <span class="text-blue-600 text-sm font-medium">Lihat Foto</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h3 class="text-lg font-bold text-gray-800 mb-4">Kategori</h3>
+              <ul class="space-y-2">
+                {Array.from(new Set(newsItems.map(news => news.category))).map(category => (
+                  <li>
+                    <a href={`#${category.toLowerCase().replace(/\s+/g, '-')}`} class="text-blue-600 hover:text-blue-800 block py-1">
+                      {formatCategoryName(category)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h3 class="text-lg font-bold text-gray-800 mb-4">Berita Terbaru</h3>
+              <div class="space-y-3">
+                {newsItems.slice(0, 5).map((news, index) => (
+                  <div class="border-b border-gray-200 pb-3 last:border-b-0">
+                    <span class={`text-xs font-medium px-2 py-1 rounded ${getCategoryColor(news.category)}`}>
+                      {formatCategoryName(news.category)}
+                    </span>
+                    <h4 class="text-sm font-semibold text-gray-800 mt-1 mb-1 line-clamp-2">{news.title}</h4>
+                    <span class="text-xs text-gray-500">{formatDate(news.date)}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </article>
 
-          <!-- News Grid -->
-          <div class="grid md:grid-cols-2 gap-6">
-            <article class="bg-white rounded-lg shadow-md p-6">
-              <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Laporan</span>
-              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Laporan Tahunan PPID 2024</h3>
-              <p class="text-gray-600 text-sm mb-3">Ringkasan kinerja PPID selama tahun 2024 telah dipublikasikan...</p>
-              <span class="text-xs text-gray-500">10 Januari 2025</span>
-            </article>
-
-            <article class="bg-white rounded-lg shadow-md p-6">
-              <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">Update</span>
-              <h3 class="text-lg font-bold text-gray-800 mt-2 mb-3">Update Prosedur Permohonan</h3>
-              <p class="text-gray-600 text-sm mb-3">Prosedur permohonan informasi telah diperbarui...</p>
-              <span class="text-xs text-gray-500">5 Januari 2025</span>
-            </article>
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-lg font-bold text-gray-800 mb-4">Arsip</h3>
+              <select class="w-full p-2 border border-gray-300 rounded">
+                <option>Pilih Tahun</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+              </select>
+            </div>
           </div>
         </div>
+      )}
 
-        <!-- Sidebar -->
-        <div>
-          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Kategori</h3>
-            <ul class="space-y-2">
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Pengumuman</a></li>
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Laporan</a></li>
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Kegiatan</a></li>
-              <li><a href="#" class="text-blue-600 hover:text-blue-800">Informasi</a></li>
-            </ul>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-4">Arsip</h3>
-            <select class="w-full p-2 border border-gray-300 rounded">
-              <option>Pilih Tahun</option>
-              <option>2025</option>
-              <option>2024</option>
-              <option>2023</option>
-            </select>
-          </div>
+      <!-- All News Section -->
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Semua Berita</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {newsItems.map((news, index) => (
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+              {news.images.length > 0 && (
+                <div class="h-48 overflow-hidden">
+                  <img
+                    src={`/Berita/${news.category}/${news.folder}/${news.images[0]}`}
+                    alt={news.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div class="p-6">
+                <span class={`text-sm font-medium px-3 py-1 rounded ${getCategoryColor(news.category)}`}>
+                  {formatCategoryName(news.category)}
+                </span>
+                <h3 class="text-xl font-bold text-gray-800 mt-3 mb-3 line-clamp-2">{news.title}</h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                  Dokumentasi kegiatan {formatCategoryName(news.category)} yang dilaksanakan di SMKN 14 Jakarta dengan berbagai aktivitas menarik.
+                </p>
+                {news.images.length > 1 && (
+                  <div class="flex space-x-1 mb-4">
+                    {news.images.slice(1, 4).map((image, imgIndex) => (
+                      <img
+                        src={`/Berita/${news.category}/${news.folder}/${image}`}
+                        alt={`${news.title} - Foto ${imgIndex + 2}`}
+                        class="w-12 h-12 object-cover rounded flex-1"
+                      />
+                    ))}
+                    {news.images.length > 4 && (
+                      <div class="w-12 h-12 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-600">
+                        +{news.images.length - 4}
+                      </div>
+                    )}
+                  </div>
+                )}
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-gray-500">{formatDate(news.date)}</span>
+                  <span class="text-blue-600 font-medium">Dokumentasi Lengkap</span>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </div>
   </div>
 </PageLayout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
