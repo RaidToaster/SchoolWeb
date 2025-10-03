@@ -1,0 +1,165 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import { FileText, Download, FileQuestion, AlertTriangle, CheckCircle, BarChart3 } from "lucide-astro";
+---
+
+<PageLayout title="Statistik Layanan Informasi - PPID SMKN 14 Jakarta">
+    <div class="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+        <div class="container mx-auto px-6 py-12">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full mb-6 shadow-xl">
+                        <BarChart3 class="w-10 h-10 text-white" />
+                    </div>
+                    <h1 class="text-5xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4">
+                        Statistik Layanan Informasi Publik
+                    </h1>
+                    <p class="text-xl text-gray-600 font-medium">(PPID SMKN 14 Jakarta)</p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mx-auto mt-6 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
+                    <!-- Daftar Informasi Publik -->
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-700 rounded-3xl transform rotate-6 group-hover:rotate-3 transition-transform duration-300"></div>
+                        <div class="relative bg-gradient-to-br from-green-500 to-green-600 text-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                                    <FileText class="w-8 h-8" />
+                                </div>
+                                <h2 class="text-lg font-semibold mb-2 leading-tight">
+                                    Daftar Informasi Publik
+                                </h2>
+                                <p class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-green-100 bg-clip-text text-transparent">48</p>
+                                <div class="w-12 h-1 bg-white/30 mx-auto rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jumlah Unduh -->
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-green-700 rounded-3xl transform rotate-6 group-hover:rotate-3 transition-transform duration-300"></div>
+                        <div class="relative bg-gradient-to-br from-emerald-500 to-green-600 text-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                                    <Download class="w-8 h-8" />
+                                </div>
+                                <h2 class="text-lg font-semibold mb-2 leading-tight">
+                                    Jumlah Unduh
+                                </h2>
+                                <p class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-emerald-100 bg-clip-text text-transparent">0</p>
+                                <div class="w-12 h-1 bg-white/30 mx-auto rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jumlah Permohonan -->
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-green-700 to-emerald-800 rounded-3xl transform rotate-6 group-hover:rotate-3 transition-transform duration-300"></div>
+                        <div class="relative bg-gradient-to-br from-green-600 to-emerald-700 text-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                                    <FileQuestion class="w-8 h-8" />
+                                </div>
+                                <h2 class="text-lg font-semibold mb-2 leading-tight">
+                                    Jumlah Permohonan
+                                </h2>
+                                <p class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-green-100 bg-clip-text text-transparent">48</p>
+                                <div class="w-12 h-1 bg-white/30 mx-auto rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Jumlah Keberatan -->
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-800 rounded-3xl transform rotate-6 group-hover:rotate-3 transition-transform duration-300"></div>
+                        <div class="relative bg-gradient-to-br from-emerald-600 to-teal-700 text-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                                    <AlertTriangle class="w-8 h-8" />
+                                </div>
+                                <h2 class="text-lg font-semibold mb-2 leading-tight">
+                                    Jumlah Keberatan
+                                </h2>
+                                <p class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-emerald-100 bg-clip-text text-transparent">48</p>
+                                <div class="w-12 h-1 bg-white/30 mx-auto rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Permohonan Selesai -->
+                    <div class="group relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-teal-700 to-green-800 rounded-3xl transform rotate-6 group-hover:rotate-3 transition-transform duration-300"></div>
+                        <div class="relative bg-gradient-to-br from-teal-600 to-green-700 text-white p-8 rounded-3xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="text-center">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+                                    <CheckCircle class="w-8 h-8" />
+                                </div>
+                                <h2 class="text-lg font-semibold mb-2 leading-tight">
+                                    Permohonan Selesai
+                                </h2>
+                                <p class="text-6xl font-bold mb-2 bg-gradient-to-r from-white to-teal-100 bg-clip-text text-transparent">48</p>
+                                <div class="w-12 h-1 bg-white/30 mx-auto rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Enhanced Chart Section */}
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-white/80 to-white/60 backdrop-blur-sm rounded-3xl"></div>
+                    <div class="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border border-white/20">
+                        <div class="text-center mb-8">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full mb-4">
+                                <BarChart3 class="w-8 h-8 text-white" />
+                            </div>
+                            <h2 class="text-3xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-2">
+                                Rata - Rata Penyelesaian Permohonan
+                            </h2>
+                            <p class="text-gray-600">Analisis performa layanan informasi publik</p>
+                        </div>
+                        <div class="relative h-96 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4 shadow-inner">
+                            <canvas id="requestsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        import Chart from 'chart.js/auto';
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById(
+                "requestsChart",
+            ) as HTMLCanvasElement;
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["Tahun 2025"],
+                    datasets: [
+                        {
+                            label: "Penyelesaian Permohonan",
+                            data: [100], // Placeholder data
+                            backgroundColor: ["rgba(54, 162, 235, 0.6)"],
+                            borderColor: ["rgba(54, 162, 235, 1)"],
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                    },
+                },
+            });
+        });
+    </script>
+</PageLayout>
