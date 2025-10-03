@@ -51,6 +51,7 @@
 .bigger-text.accessibility-enabled table,
 .bigger-text.accessibility-enabled th,
 .bigger-text.accessibility-enabled td,
+.bigger-text.accessibility-enabled a,
 .bigger-text.accessibility-enabled caption {
   font-size: 1.1em;
   line-height: 1.5;
