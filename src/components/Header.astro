@@ -186,12 +186,12 @@ const links = [
 
             <!-- Desktop Dropdown Menu -->
             {link.hasDropdown && link.dropdown && (
-              <div class="absolute top-full left-0 mt-1 w-64 bg-white backdrop-blur-md rounded-xl shadow-2xl border border-white/20  invisible group-hover:opacity-100 group-hover:visible transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
+              <div class="absolute top-full left-0 mt-1 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
                 <div class="py-2">
                   {link.dropdown.map((dropdownItem) => (
                     <a
                       href={dropdownItem.href}
-                      class="block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 border-l-4 border-transparent hover:border-primary first:rounded-t-xl last:rounded-b-xl"
+                      class="block px-4 py-3 text-primary hover:text-primary hover:bg-primary/5 transition-all duration-200 border-l-4 border-transparent hover:border-primary first:rounded-t-xl last:rounded-b-xl"
                     >
                       {dropdownItem.name}
                     </a>
@@ -223,7 +223,7 @@ const links = [
 
 
     <!-- Mobile Navigation -->
-    <nav class="p-6">
+    <nav class="p-6 bg-white">
       {links.map((link, index) => (
         <div class="opacity-100 transition-all duration-300 peer-checked:opacity-100 peer-checked:translate-y-0" style={`transition-delay: ${(index + 2) * 50}ms`}>
           <div class="relative">
@@ -232,7 +232,7 @@ const links = [
                 <input type="checkbox" id={`mobile-dropdown-${index}`} class="peer hidden dropdown-toggle" />
                 <label
                   for={`mobile-dropdown-${index}`}
-                  class="flex items-center px-4 py-3 rounded-xl text-gray-700 font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2 cursor-pointer"
+                  class="flex items-center px-4 py-3 rounded-xl text-primary font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2 cursor-pointer"
                 >
                   {link.icon && (
                     <link.icon class="w-5 h-5 mr-3 opacity-70 transition-opacity duration-300" />
@@ -245,7 +245,7 @@ const links = [
               <a
                 href={link.href}
                 class:list={[
-                  "flex items-center px-4 py-3 rounded-xl text-gray-700 font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2",
+                  "flex items-center px-4 py-3 rounded-xl text-primary font-medium transition-all duration-300 hover:bg-primary/10 hover:text-primary hover:translate-x-2",
                   {
                     "bg-primary/20 text-primary shadow-sm border-l-4 border-primary":
                       Astro.url.pathname === link.href,
