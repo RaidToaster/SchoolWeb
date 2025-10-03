@@ -138,7 +138,7 @@ const links = [
 ];
 ---
 
-<header class="bg-gradient-to-r from-primary via-primary-dark to-primary shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
+<header class="bg-primary shadow-lg sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
   <div class="container mx-auto px-4">
     <div class="flex flex-col  items-center justify-around py-4 gap-4">
       <!-- Logo Section -->
@@ -186,7 +186,7 @@ const links = [
 
             <!-- Desktop Dropdown Menu -->
             {link.hasDropdown && link.dropdown && (
-              <div class="absolute top-full left-0 mt-1 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
+              <div class="absolute top-full left-0 mt-1 w-64 bg-white backdrop-blur-md rounded-xl shadow-2xl border border-white/20  invisible group-hover:opacity-100 group-hover:visible transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
                 <div class="py-2">
                   {link.dropdown.map((dropdownItem) => (
                     <a

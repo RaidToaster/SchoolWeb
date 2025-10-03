@@ -86,23 +86,137 @@
   transition-duration: 0.01ms !important;
 }
 
-/* Invert Colors - only for images/media */
-.invert-colors.accessibility-enabled img,
-.invert-colors.accessibility-enabled video,
-.invert-colors.accessibility-enabled canvas {
+/* Invert Colors - full page using Tailwind invert utilities */
+.invert-colors.accessibility-enabled {
   filter: invert(1) hue-rotate(180deg);
 }
 
-/* Dark Contrast - subtle enhancement for specific elements */
+.invert-colors.accessibility-enabled img,
+.invert-colors.accessibility-enabled video,
+.invert-colors.accessibility-enabled canvas,
+.invert-colors.accessibility-enabled svg,
+.invert-colors.accessibility-enabled .bg-primary,
+.invert-colors.accessibility-enabled .bg-gray-50,
+.invert-colors.accessibility-enabled .bg-gray-100,
+.invert-colors.accessibility-enabled .bg-gray-200,
+.invert-colors.accessibility-enabled .bg-gray-900,
+.invert-colors.accessibility-enabled .text-black,
+.invert-colors.accessibility-enabled .text-white,
+.invert-colors.accessibility-enabled .text-gray-900,
+.invert-colors.accessibility-enabled .text-gray-800,
+.invert-colors.accessibility-enabled .text-gray-700,
+.invert-colors.accessibility-enabled .text-gray-600,
+.invert-colors.accessibility-enabled .text-gray-500,
+.invert-colors.accessibility-enabled .text-gray-400,
+.invert-colors.accessibility-enabled .text-gray-300,
+.invert-colors.accessibility-enabled .text-gray-200,
+.invert-colors.accessibility-enabled .text-gray-100 {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.invert-colors.accessibility-enabled #accessibility-menu,
+.invert-colors.accessibility-enabled #accessibility-toggle,
+.invert-colors.accessibility-enabled .invert-colors {
+  filter: none !important;
+}
+
+/* Dark Contrast - full page using Tailwind dark mode utilities */
 .dark-contrast.accessibility-enabled {
-  background-color: #ffffff;
-  color: #111827;
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.dark-contrast.accessibility-enabled .bg-white {
+  background-color: #1f2937;
 }
 
 .dark-contrast.accessibility-enabled .bg-gray-50 {
-  background-color: #f3f4f6;
+  background-color: #111827;
+}
+
+.dark-contrast.accessibility-enabled .bg-gray-100 {
+  background-color: #1f2937;
+}
+
+.dark-contrast.accessibility-enabled .bg-gray-200 {
+  background-color: #374151;
+}
+
+.dark-contrast.accessibility-enabled .text-black {
+  color: #f9fafb;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-900 {
+  color: #f9fafb;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-800 {
+  color: #f3f4f6;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-700 {
+  color: #e5e7eb;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-600 {
+  color: #d1d5db;
 }
 
 .dark-contrast.accessibility-enabled .text-gray-500 {
+  color: #9ca3af;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-400 {
   color: #6b7280;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-300 {
+  color: #4b5563;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-200 {
+  color: #374151;
+}
+
+.dark-contrast.accessibility-enabled .text-gray-100 {
+  color: #1f2937;
+}
+
+.dark-contrast.accessibility-enabled .border-gray-200 {
+  border-color: #4b5563;
+}
+
+.dark-contrast.accessibility-enabled .border-gray-300 {
+  border-color: #374151;
+}
+
+.dark-contrast.accessibility-enabled .border-gray-400 {
+  border-color: #1f2937;
+}
+
+.dark-contrast.accessibility-enabled .bg-primary {
+  background-color: #059669;
+}
+
+.dark-contrast.accessibility-enabled .bg-primary-hover {
+  background-color: #047857;
+}
+
+.dark-contrast.accessibility-enabled .text-primary {
+  color: #6ee7b7;
+}
+
+.dark-contrast.accessibility-enabled .hover\:bg-primary:hover {
+  background-color: #047857;
+}
+.dark-contrast.accessibility-enabled tr:hover {
+  background-color: #374151; /* A slightly lighter dark color for hover */
+  color: #f9fafb; /* Ensure text remains white */
+}
+.dark-contrast.accessibility-enabled header.bg-primary,
+.dark-contrast.accessibility-enabled footer.bg-footer-bg {
+  background-color: #000000 !important;
+}
+.dark-contrast.accessibility-enabled section.bg-primary {
+  background-color: #1f2937 !important;
 }
