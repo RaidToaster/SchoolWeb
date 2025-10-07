@@ -95,8 +95,18 @@ const announcements = [
     class="relative min-h-[70vh] flex items-center justify-center text-center text-white overflow-hidden bg-gradient-to-br bg-primary"
   >
     <div class="absolute inset-0 bg-black/20"></div>
-    <div class="relative z-10 px-4 max-w-6xl mx-auto" data-aos="fade-up">
-      <div class="mb-6" data-aos="zoom-in" data-aos-delay="100">
+    <!-- Optimized background image with lazy loading -->
+    <div class="absolute inset-0 opacity-10">
+      <img
+        src="/GedungSMKN14.jpg"
+        alt="SMKN 14 Jakarta Building"
+        class="w-full h-full object-cover lazy"
+        loading="eager"
+        decoding="async"
+        style="filter: blur(1px); transform: scale(1.1);" />
+    </div>
+    <div class="relative z-10 px-4 max-w-6xl mx-auto">
+      <div class="mb-6">
         <div
           class="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full mb-6"
         >
@@ -106,15 +116,11 @@ const announcements = [
 
       <h1
         class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg"
-        data-aos="fade-up"
-        data-aos-delay="200"
       >
         PPID SMKN 14 Jakarta
       </h1>
       <p
         class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto drop-shadow-md leading-relaxed"
-        data-aos="fade-up"
-        data-aos-delay="300"
       >
         Pejabat Pengelola Informasi dan Dokumentasi untuk layanan publik yang
         transparan, akuntabel, dan mudah diakses oleh masyarakat.
@@ -122,8 +128,6 @@ const announcements = [
 
       <div
         class="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        data-aos="fade-up"
-        data-aos-delay="400"
       >
         <a
           href="/ppid/form-permohonan-informasi"
@@ -146,7 +150,7 @@ const announcements = [
   <!-- Quick Menu Section -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-gray-800 mb-4">Menu Utama</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           Akses cepat ke informasi dan layanan PPID SMKN 14 Jakarta
@@ -159,8 +163,6 @@ const announcements = [
             <a
               href={menu.href}
               class="group bg-white rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 border border-gray-100"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
             >
               <div
                 class={`${menu.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -186,7 +188,7 @@ const announcements = [
       <div class="flex flex-col lg:flex-row gap-12">
         <!-- News -->
         <div class="lg:w-2/3">
-          <h2 class="text-3xl font-bold text-gray-800 mb-8" data-aos="fade-up">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8">
             Berita & Informasi Terbaru
           </h2>
           <div class="space-y-6">
@@ -194,8 +196,6 @@ const announcements = [
               latestNews.map((news, index) => (
                 <article
                   class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
                 >
                   <div class="flex items-start justify-between mb-3">
                     <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">
@@ -233,8 +233,6 @@ const announcements = [
                 announcements.map((announcement, index) => (
                   <div
                     class="border-l-4 border-yellow-400 pl-4 py-2"
-                    data-aos="fade-up"
-                    data-aos-delay={index * 50}
                   >
                     <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded">
                       {announcement.type}
@@ -269,14 +267,14 @@ const announcements = [
                 <Phone class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
                 <div>
                   <p class="text-sm font-medium text-gray-800">Telepon</p>
-                  <p class="text-sm text-gray-600">(021) 1234-5678</p>
+                  <p class="text-sm text-gray-600">(021) 4240543</p>
                 </div>
               </div>
               <div class="flex items-center">
                 <Mail class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" />
                 <div>
                   <p class="text-sm font-medium text-gray-800">Email</p>
-                  <p class="text-sm text-gray-600">ppid@smkn14jkt.sch.id</p>
+                  <p class="text-sm text-gray-600">smkn14jakarta@gmail.com</p>
                 </div>
               </div>
               <div class="flex items-center">
@@ -284,7 +282,7 @@ const announcements = [
                 <div>
                   <p class="text-sm font-medium text-gray-800">Jam Layanan</p>
                   <p class="text-sm text-gray-600">
-                    Senin - Jumat: 08:00 - 16:00 WIB
+                    Senin - Jumat: 06:30 - 15:00 WIB<br>Sabtu - Minggu: Tutup<br>Layanan online 24/7 melalui website
                   </p>
                 </div>
               </div>
